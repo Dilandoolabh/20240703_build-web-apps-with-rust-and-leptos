@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "fed2386dd9f6728caea072578224d925548bf7a2"
+  },
+  "path_in_vcs": "crates/cargo-subcommand-metadata"
+}

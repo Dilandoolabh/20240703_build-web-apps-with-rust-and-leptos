@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "975127a6cbe6e9c0dc903a044b09921e20141f65"
+  },
+  "path_in_vcs": "crates/detect-targets"
+}

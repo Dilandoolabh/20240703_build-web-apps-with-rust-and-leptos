@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "e2ef5918cfe7391c4649430196353b96ceeba34d"
+  },
+  "path_in_vcs": "crates/cargo-toml-workspace"
+}

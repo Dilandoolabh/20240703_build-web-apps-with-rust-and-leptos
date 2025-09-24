@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "17939edaa0f83a0c9a7ee63129ccfcd2f73058dd"
+  },
+  "path_in_vcs": "crates/fs-lock"
+}

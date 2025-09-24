@@ -1,0 +1,8 @@
+[package]
+name = "binstall"
+version = "0.2.0"
+edition = "2021"
+readme = "README.md"
+description = "Reserved to avoid confusion with cargo-binstall. Install that instead!"
+homepage = "https://github.com/cargo-bins/cargo-binstall"
+license = "CC0-1.0"

@@ -1,0 +1,43 @@
+[package]
+name = "browserslist-rs"
+version = "0.18.2"
+authors = ["Pig Fang <g-plane@hotmail.com>"]
+edition = "2021"
+description = "Rust-ported Browserslist."
+repository = "https://github.com/browserslist/browserslist-rs"
+license = "MIT"
+keywords = ["web", "javascript"]
+categories = ["web-programming", "config"]
+include = ["**/*.rs", "Cargo.toml", "src/generated/**/*.json"]
+
+[lib]
+name = "browserslist"
+crate-type = ["rlib"]
+
+[features]
+wasm_bindgen = ["chrono/wasmbind", "js-sys"]
+
+[dependencies]
+ahash = { version = "0.8.12", features = ["serde"] }
+chrono = { version = "0.4.38", features = [
+    "std",
+    "clock",
+    "oldtime",
+], default-features = false } # disable wasmbind by default
+either = "1.13"
+indexmap = { version = "2.6", features = ["serde"] }
+itertools = "0.13"
+nom = "7.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+
+[dev-dependencies]
+clap = { version = "4.5", features = ["derive"] }
+test-case = "3.3"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+js-sys = { version = "0.3", optional = true }
+
+[workspace]
+members = [".", "generate-data", "wasm"]
