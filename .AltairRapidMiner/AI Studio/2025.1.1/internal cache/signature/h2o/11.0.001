@@ -1,0 +1,721 @@
+[ {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.PredictionModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "h2o:gradient_boosted_trees",
+  "ioHolderClass" : "com.rapidminer.h2o.operator.GradientBoostedModelOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "number_of_trees" : {
+      "description" : "The number of learned trees.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "reproducible" : {
+      "description" : "Reproducible",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "maximum_number_of_threads" : {
+      "description" : "Maximum number of threads",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "maximal_depth" : {
+      "description" : "Maximum depth of a tree. Deeper trees are more expressive (potentially allowing higher accuracy), but they are also more costly to train and are more likely to overfit.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "min_rows" : {
+      "description" : "Fewest allowed (weighted) observations in a leaf (in R called 'nodesize').",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "min_split_improvement" : {
+      "description" : "Minimum relative improvement in squared error reduction for a split to happen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "number_of_bins" : {
+      "description" : "For numerical columns (real/int), build a histogram of (at least) this many bins, then split at the best point",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "learning_rate" : {
+      "description" : "Learning rate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "sample_rate" : {
+      "description" : "Row sample rate per tree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "distribution" : {
+      "description" : "Distribution function.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "early_stopping" : {
+      "description" : "If true, parameters for early stopping needs to be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "stopping_rounds" : {
+      "description" : "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "stopping_metric" : {
+      "description" : "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression)",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "stopping_tolerance" : {
+      "description" : "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much).",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "monotone_constraints" : {
+      "description" : "A mapping representing monotonic constraints.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "max_runtime_seconds" : {
+      "description" : "Maximum allowed runtime in seconds for model training. Use 0 to disable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "expert_parameters" : {
+      "description" : "Advanced parameters that can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "weighted examples", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.PredictionModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "threshold" : {
+      "className" : "com.rapidminer.operator.postprocessing.Threshold",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "h2o:generalized_linear_model",
+  "ioHolderClass" : "com.rapidminer.h2o.operator.GeneralizedLinearModelOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "family" : {
+      "description" : "Family. Use binomial for classification with logistic regression, others are for regression problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "link" : {
+      "description" : "The link function relates the linear predictor to the distribution function.  The default is the canonical link for the specified family. ",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "solver" : {
+      "description" : "AUTO will currently always set the solver to IRLSM. IRLSM is fast on on problems with small number of predictors and for lambda-search with L1 penalty, L_BFGS scales better for datasets with many columns. Coordinate descent and Coordinate descent naive are experimental (beta).",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "reproducible" : {
+      "description" : "Reproducible",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "maximum_number_of_threads" : {
+      "description" : "Maximum number of threads",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "use_regularization" : {
+      "description" : "Use regularization. if this parameter is enabled, the lambda, alpha and lambda_search parameters can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "lambda" : {
+      "description" : "The lambda parameter controls  the amount of regularization applied. If lambda is 0.0, no regularization is applied and the alpha parameter is ignored.The default value for lambda is calculated by H2O using a heuristic based on the training data.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "lambda_search" : {
+      "description" : "Use lambda search starting at lambda max, given lambda is then interpreted as lambda min.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "number_of_lambdas" : {
+      "description" : "The number of lambda values when lambda search = TRUE. 0 means no preference.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "lambda_min_ratio" : {
+      "description" : "Smallest value for lambda as a fraction of lambda.max, the entry value, which is the smallest value for which all coefficients in the model are zero.  If the number of observations is greater than the number of variables then default lambda_min_ratio = 0.0001; if the number of observations is less than the number of variables then default lambda_min_ratio = 0.01. Default is 0.0.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "early_stopping" : {
+      "description" : "Use early stopping metric for lambda search",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "stopping_rounds" : {
+      "description" : "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "stopping_tolerance" : {
+      "description" : "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much).",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "alpha" : {
+      "description" : "The alpha parameter controls the distribution between the L1 (Lasso) and L2(Ridge regression) penalties. A value of 1.0 for alpha represents Lasso, and an alphavalue of 0.0 produces Ridge regression. Default is 0.0 for the L-BFGS solver, else 0.5.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "standardize" : {
+      "description" : "Standardize numeric columns to have zero mean and unit variance",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "non-negative_coefficients" : {
+      "description" : "Restrict coefficients (not intercept) to be non-negative.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "add_intercept" : {
+      "description" : "Include constant term in the model.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "compute_p-values" : {
+      "description" : "Request p-values computation, p-values work only with IRLSM solver and no regularization",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "remove_collinear_columns" : {
+      "description" : "In case of linearly dependent columns remove some of the dependent columns.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "missing_values_handling" : {
+      "description" : "Handling of missing values. Either Skip or MeanImputation.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "max_iterations" : {
+      "description" : "Maximum number of iterations. 0 means no limit.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "specify_beta_constraints" : {
+      "description" : "If enabled, beta constraints for the regular attributes can be provided.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "beta_constraints" : {
+      "description" : "Beta constraints",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "max_runtime_seconds" : {
+      "description" : "Maximum allowed runtime in seconds for model training. Use 0 to disable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "expert_parameters" : {
+      "description" : "Advanced parameters that can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "weighted examples", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.PredictionModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "threshold" : {
+      "className" : "com.rapidminer.operator.postprocessing.Threshold",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "h2o:logistic_regression",
+  "ioHolderClass" : "com.rapidminer.h2o.operator.LogisticRegressionOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "solver" : {
+      "description" : "AUTO will currently always set the solver to IRLSM. IRLSM is fast on on problems with small number of predictors and for lambda-search with L1 penalty, L_BFGS scales better for datasets with many columns. Coordinate descent and Coordinate descent naive are experimental (beta).",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "reproducible" : {
+      "description" : "Reproducible",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "maximum_number_of_threads" : {
+      "description" : "Maximum number of threads",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "use_regularization" : {
+      "description" : "Use regularization. if this parameter is enabled, the lambda, alpha and lambda_search parameters can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "lambda" : {
+      "description" : "The lambda parameter controls  the amount of regularization applied. If lambda is 0.0, no regularization is applied and the alpha parameter is ignored.The default value for lambda is calculated by H2O using a heuristic based on the training data.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "lambda_search" : {
+      "description" : "Use lambda search starting at lambda max, given lambda is then interpreted as lambda min.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "number_of_lambdas" : {
+      "description" : "The number of lambda values when lambda search = TRUE. 0 means no preference.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "lambda_min_ratio" : {
+      "description" : "Smallest value for lambda as a fraction of lambda.max, the entry value, which is the smallest value for which all coefficients in the model are zero.  If the number of observations is greater than the number of variables then default lambda_min_ratio = 0.0001; if the number of observations is less than the number of variables then default lambda_min_ratio = 0.01. Default is 0.0.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "early_stopping" : {
+      "description" : "Use early stopping metric for lambda search",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "stopping_rounds" : {
+      "description" : "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "stopping_tolerance" : {
+      "description" : "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much).",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "alpha" : {
+      "description" : "The alpha parameter controls the distribution between the L1 (Lasso) and L2(Ridge regression) penalties. A value of 1.0 for alpha represents Lasso, and an alphavalue of 0.0 produces Ridge regression. Default is 0.0 for the L-BFGS solver, else 0.5.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "standardize" : {
+      "description" : "Standardize numeric columns to have zero mean and unit variance",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "non-negative_coefficients" : {
+      "description" : "Restrict coefficients (not intercept) to be non-negative.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "add_intercept" : {
+      "description" : "Include constant term in the model.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "compute_p-values" : {
+      "description" : "Request p-values computation, p-values work only with IRLSM solver and no regularization",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "remove_collinear_columns" : {
+      "description" : "In case of linearly dependent columns remove some of the dependent columns.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "missing_values_handling" : {
+      "description" : "Handling of missing values. Either Skip or MeanImputation.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "max_iterations" : {
+      "description" : "Maximum number of iterations. 0 means no limit.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "max_runtime_seconds" : {
+      "description" : "Maximum allowed runtime in seconds for model training. Use 0 to disable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "binominal label", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.PredictionModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "h2o:deep_learning",
+  "ioHolderClass" : "com.rapidminer.h2o.operator.DeepLearningOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "activation" : {
+      "description" : "The activation function (non-linearity) to be used the neurons in the hidden layers.\nTanh: Hyperbolic tangent function (same as scaled and shifted sigmoid).\nRectifier: Chooses the maximum of (0, x) where x is the input value.\nMaxout: Choose the maximum coordinate of the input vector.\nWith Dropout: Zero out a random user-given fraction of the\nincoming weights to each hidden layer during training, for each\ntraining row. This effectively trains exponentially many models at\nonce, and can improve generalization.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "hidden_layer_sizes" : {
+      "description" : "Describes the size of all hidden layers.",
+      "className" : "com.rapidminer.h2o.operator.DeepLearningOperator$2",
+      "isOptional" : true
+    },
+    "hidden_dropout_ratios" : {
+      "description" : "A fraction of the inputs for each hidden layer to be omitted from training in order to improve generalization. Defaults to 0.5 for each hidden layer if omitted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "reproducible_(uses_1_thread)" : {
+      "description" : "Force reproducibility on small data (WARNING: will be slow - only uses 1 thread).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "epochs" : {
+      "description" : "How many times the dataset should be iterated (streamed), can be fractional",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "compute_variable_importances" : {
+      "description" : "Compute variable importances for input features (Gedeon method) - can be slow for large networks",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "train_samples_per_iteration" : {
+      "description" : "The number of training data rows to be processed per iteration. Note that independent of this parameter, each row is used immediately to update the model with (online) stochastic gradient descent. This parameter controls the frequency at which scoring and model cancellation can happen. Special values are 0 for one epoch per iteration, -1 for processing the maximum amount of data per iteration. Special value of -2 turns on automatic mode (auto-tuning).",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "adaptive_rate" : {
+      "description" : "Adaptive learning rate",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "epsilon" : {
+      "description" : "The optimization is stopped if the training error gets below this epsilon value.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "rho" : {
+      "description" : "It is similar to momentum and relates to the memory to prior weight updates.\nTypical values are between 0.9 and 0.999.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "learning_rate" : {
+      "description" : "The learning rate, alpha. Higher values lead to less stable models, while lower values lead to slower convergence. Default is 0.005",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "learning_rate_annealing" : {
+      "description" : "Learning rate annealing reduces the learning rate to \"freeze\" into local minima in the optimization landscape. The annealing rate is the inverse of the number of training samples it takes to cut the learning rate in half (e.g., 1e-6 means that it takes 1e6 training samples to halve the learning rate). This parameter is only active if adaptive learning rate is disabled.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "learning_rate_decay" : {
+      "description" : "The learning rate decay parameter controls the change of learning rate across layers. For example, assume the rate parameter is set to 0.01, and the rate_decay parameter is set to 0.5. Then the learning rate for the weights connecting the input and first hidden layer will be 0.01, the learning rate for the weights connecting the first and the second hidden layer will be 0.005, and the learning rate for the weights connecting the second and third hidden layer will be 0.0025, etc. This parameter is only active if adaptive learning rate is disabled.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "momentum_start" : {
+      "description" : "The momentum_start parameter controls the amount of momentum at the beginning of training. This parameter is only active if adaptive learning rate is disabled.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "momentum_ramp" : {
+      "description" : "The momentum_ramp parameter controls the amount of learning for which momentum increases (assuming momentum_stable is larger than momentum_start). The ramp is measured in the number of training samples. This parameter is only active if adaptive learning rate is disabled.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "momentum_stable" : {
+      "description" : "The momentum_stable parameter controls the final momentum value reached after momentum_ramp training samples. The momentum used for training will remain the same for training beyond reaching that point. This parameter is only active if adaptive learning rate is disabled. ",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "nesterov_accelerated_gradient" : {
+      "description" : "The Nesterov accelerated gradient descent method is a modification to traditional gradient descent for convex functions. The method relies on gradient information at various points to build a polynomial approximation that minimizes the residuals in fewer iterations of the descent. This parameter is only active if adaptive learning rate is disabled. ",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "standardize" : {
+      "description" : "If enabled, automatically standardize the data. If disabled, the user must provide properly scaled input data.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "L1" : {
+      "description" : "L1 regularization (can add stability and improve generalization, causes many weights to become 0)",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "L2" : {
+      "description" : "L2 regularization (can add stability and improve generalization, causes many weights to be small",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "max_w2" : {
+      "description" : "Constraint for squared sum of incoming weights per unit",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "loss_function" : {
+      "description" : "Loss function.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "distribution_function" : {
+      "description" : "Distribution function.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "early_stopping" : {
+      "description" : "If true, parameters for early stopping needs to be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "stopping_rounds" : {
+      "description" : "Early stopping based on convergence of stopping_metric. Stop if simple moving average of length k of the stopping_metric does not improve for k:=stopping_rounds scoring events.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "stopping_metric" : {
+      "description" : "Metric to use for early stopping (AUTO: logloss for classification, deviance for regression)",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "stopping_tolerance" : {
+      "description" : "Relative tolerance for metric-based stopping criterion (stop if relative improvement is not at least this much).",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "missing_values_handling" : {
+      "description" : "Handling of missing values. Either Skip or MeanImputation.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "max_runtime_seconds" : {
+      "description" : "Maximum allowed runtime in seconds for model training. Use 0 to disable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "expert_parameters" : {
+      "description" : "Advanced parameters that can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "expert_parameters_" : {
+      "description" : "Advanced parameters that can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "weighted examples", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "cluster model" : {
+      "className" : "com.rapidminer.h2o.model.H2OCentroidClusterModel_v3",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "clustered set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "h2o:kmeans",
+  "ioHolderClass" : "com.rapidminer.h2o.operator.KMeansOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "add_cluster_attribute" : {
+      "description" : "If enabled, a cluster id is generated as new special attribute directly in this operator, otherwise this operator does not add an id attribute. In the latter case you have to use the Apply Model operator to generate the cluster attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "add_as_label" : {
+      "description" : "If true the new Attribute with the cluster_id is called 'label' and has the special role 'Label'. If the parameter add cluster attribute is false, no new Attribute is created.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "remove_unlabeled" : {
+      "description" : "If set to true, Examples which cannot be assigned to a cluster are removed from the output ExampleSet.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "estimate_k" : {
+      "description" : "This parameter specifies whether to estimate the number of clusters (<=maximum k) iteratively (independent of the seed) and deterministically (beginning with k=1,2,3...). If enabled, for each k that, the estimate will go up to max iterations.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "k" : {
+      "description" : "This parameter specifies the number of clusters (groups of data) in a dataset that are similar to one another.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "maximum_k" : {
+      "description" : "This parameter specifies the maximum number of clusters (groups of data) in a dataset that are similar to one another. This is a ceiling value for k estimation.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "standardize" : {
+      "description" : "Enable this option to standardize the numeric columns to have a mean of zero and unit variance. Standardization is highly recommended; if you do not use standardization, the results can include components that are dominated by variables that appear to have larger variances relative to other attributes as a matter of scale, rather than true contribution. This option is enabled by default.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "initialization_mode" : {
+      "description" : "Specify the initialization mode. The options are Random, Furthest and PlusPlus.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "This parameter indicates if a local random seed should be used for randomization of the k different starting points of the algorithm.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "This parameter specifies the local random seed. This parameter is only available if the use local random seed parameter is set to true.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "nominal_encoding" : {
+      "description" : "This parameter specifies encoding scheme for handling categorical features.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "max_iterations" : {
+      "description" : "This parameter specifies the maximum number of training iterations.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "expert_parameters" : {
+      "description" : "Advanced parameters that can be set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "unlabeled", "missing values" ],
+  "subNodes" : [ ]
+} ]

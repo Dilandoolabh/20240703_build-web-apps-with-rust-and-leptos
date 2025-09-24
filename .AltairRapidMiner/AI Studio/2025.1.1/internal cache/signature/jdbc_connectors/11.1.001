@@ -1,0 +1,742 @@
+[ {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:register_visualization_from_database",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.visualization.DatabaseExampleVisualizationOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Database' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "use_default_schema" : {
+      "description" : "If checked, the user's default schema will be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "schema_name" : {
+      "description" : "The schema name to use, unless use_default_schema is true.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseSchema",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "A database table.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseTable",
+      "isOptional" : false
+    },
+    "id_column" : {
+      "description" : "The column of the table holding the object ids for detail data querying.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:read_access",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.io.AccessDataReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "define_query" : {
+      "description" : "Specifies whether the database query should be defined directly, through a file or implicitely by a given table name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "query" : {
+      "description" : "An SQL query.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeSQLQuery",
+      "isOptional" : true
+    },
+    "query_file" : {
+      "description" : "A file containing an SQL query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : true
+    },
+    "use_default_schema" : {
+      "description" : "If checked, the user's default schema will be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "schema_name" : {
+      "description" : "The schema name to use, unless use_default_schema is true.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseSchema",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "A database table.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseTable",
+      "isOptional" : false
+    },
+    "prepare_statement" : {
+      "description" : "If checked, the statement is prepared, and '?'-parameters can be filled in using the parameter 'parameters'.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "parameters" : {
+      "description" : "Parameters to insert into '?' placeholders when statement is prepared.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_file" : {
+      "description" : "The file containing the Access database which should be read from.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:write_access",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.io.AccessDataWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "database_file" : {
+      "description" : "The mdb or accdb file containing the Access database which should be written to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "username" : {
+      "description" : "The username for the Access database.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "The name of the table within the Access database to which the data set should be written.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "overwrite_mode" : {
+      "description" : "Indicates if an existing table should be overwritten or if data should be appended.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "access_version" : {
+      "description" : "If a new database is created this specifies its format version.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:read_database",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.io.DatabaseDataReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Database' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "define_query" : {
+      "description" : "Specifies whether the database query should be defined directly, through a file or implicitely by a given table name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "query" : {
+      "description" : "An SQL query.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeSQLQuery",
+      "isOptional" : false
+    },
+    "query_file" : {
+      "description" : "A file containing an SQL query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : true
+    },
+    "use_default_schema" : {
+      "description" : "If checked, the user's default schema will be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "schema_name" : {
+      "description" : "The schema name to use, unless use_default_schema is true.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseSchema",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "A database table.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseTable",
+      "isOptional" : true
+    },
+    "prepare_statement" : {
+      "description" : "If checked, the statement is prepared, and '?'-parameters can be filled in using the parameter 'parameters'.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "parameters" : {
+      "description" : "Parameters to insert into '?' placeholders when statement is prepared.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:write_database",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.io.DatabaseExampleSetWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Database' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "use_default_schema" : {
+      "description" : "If checked, the user's default schema will be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "schema_name" : {
+      "description" : "The schema name to use, unless use_default_schema is true.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseSchema",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "A database table.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseTable",
+      "isOptional" : false
+    },
+    "overwrite_mode" : {
+      "description" : "Indicates if an existing table should be overwritten or if data should be appended.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "set_default_varchar_length" : {
+      "description" : "Set varchar columns to default length.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "default_varchar_length" : {
+      "description" : "Default length of varchar columns.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "add_generated_primary_keys" : {
+      "description" : "Indicates whether a new attribute holding the auto generated primary keys is added to the result set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "db_key_attribute_name" : {
+      "description" : "The name of the attribute for the auto generated primary keys",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "batch_size" : {
+      "description" : "The number of examples which are written at once with one single query to the database. Larger values can greatly improve the speed - too large values however can drastically <i>decrease</i> the performance. Additionally, some databases have restrictions on the maximum number of values written at once. Set to 0 to disable batching.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:update_database",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.io.DatabaseExampleSetUpdater",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Database' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "use_default_schema" : {
+      "description" : "If checked, the user's default schema will be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "schema_name" : {
+      "description" : "The schema name to use, unless use_default_schema is true.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseSchema",
+      "isOptional" : true
+    },
+    "table_name" : {
+      "description" : "A database table.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseTable",
+      "isOptional" : false
+    },
+    "attribute_filter_type" : {
+      "description" : "The condition specifies which attributes are selected or affected by this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "attributes" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$1",
+      "isOptional" : true
+    },
+    "use_except_expression" : {
+      "description" : "If enabled, an exception to the specified regular expression might be specified. Attributes of matching this will be filtered out, although matching the first expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$2",
+      "isOptional" : true
+    },
+    "value_type" : {
+      "description" : "The value type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_value_type_exception" : {
+      "description" : "If enabled, an exception to the specified value type might be specified. Attributes of this type will be filtered out, although matching the first specified type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_value_type" : {
+      "description" : "Except this value type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "block_type" : {
+      "description" : "The block type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_block_type_exception" : {
+      "description" : "If enabled, an exception to the specified block type might be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_block_type" : {
+      "description" : "Except this block type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numeric_condition" : {
+      "description" : "Parameter string for the condition, e.g. '>= 5'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "invert_selection" : {
+      "description" : "Indicates if only attributes should be accepted which would normally filtered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_special_attributes" : {
+      "description" : "Indicate if this operator should also be applied on the special attributes. Otherwise they are always kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "jdbc_connectors:execute_sql",
+  "ioHolderClass" : "com.rapidminer.extension.jdbc.operator.SQLExecution",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "define_connection" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.extension.jdbc.tools.jdbc.DatabaseHandler$2",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Database' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "A predefined database connection.",
+      "className" : "com.rapidminer.extension.jdbc.parameter.ParameterTypeDatabaseConnection",
+      "isOptional" : true
+    },
+    "database_system" : {
+      "description" : "The used database system.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "database_url" : {
+      "description" : "The URL connection string for the database, e.g. 'jdbc:mysql://foo.bar:portnr/database'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "username" : {
+      "description" : "The database username.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "The password for the database.",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name for a data source.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "query" : {
+      "description" : "SQL query. If not set, the query is read from the file specified by 'query_file'.",
+      "className" : "com.rapidminer.parameter.ParameterTypeText",
+      "isOptional" : true
+    },
+    "query_file" : {
+      "description" : "File containing the query. Only evaluated if 'query' is not set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : true
+    },
+    "prepare_statement" : {
+      "description" : "If checked, the statement is prepared, and '?'-parameters can be filled in using the parameter 'parameters'.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "parameters" : {
+      "description" : "Parameters to insert into '?' placeholders when statement is prepared.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

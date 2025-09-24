@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<VLDocking version="2.1">
+<DockingDesktop name="default">
+<DockingPanel>
+<Split orientation="1" location="0.7659873506676037">
+<Split orientation="1" location="0.3098330241187384">
+<Split orientation="0" location="0.4986149584487535">
+<Dockable>
+<Key dockName="repository_browser"/>
+</Dockable>
+<Dockable>
+<Key dockName="new_operator"/>
+</Dockable>
+</Split>
+<Dockable>
+<Key dockName="process_panel"/>
+</Dockable>
+</Split>
+<Split orientation="0" location="0.6301939058171745">
+<Dockable>
+<Key dockName="property_editor"/>
+</Dockable>
+<Dockable>
+<Key dockName="operator_help"/>
+</Dockable>
+</Split>
+</Split>
+</DockingPanel>
+<TabGroups>
+</TabGroups>
+</DockingDesktop>
+</VLDocking>

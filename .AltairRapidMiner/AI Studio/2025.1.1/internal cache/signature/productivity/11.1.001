@@ -1,0 +1,198 @@
+[ {
+  "inputs" : {
+    "in" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "out" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "err" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "productivity:execute_program",
+  "ioHolderClass" : "com.rapidminer.extension.productivity.operator.CommandLineOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "command" : {
+      "description" : "Command to execute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "log_stdout" : {
+      "description" : "If set to true, the stdout stream of the command is redirected to the logfile.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "log_stderr" : {
+      "description" : "If set to true, the stderr stream of the command is redirected to the logfile.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "working_directory" : {
+      "description" : "Working directory of the command.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : true
+    },
+    "env_variables" : {
+      "description" : "Environment variables used for executing the command.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "result 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "productivity:execute_process",
+  "ioHolderClass" : "com.rapidminer.extension.productivity.operator.meta.ProcessExecutionOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "process_location" : {
+      "description" : "The process location which should be encapsulated by this operator",
+      "className" : "com.rapidminer.parameter.ParameterTypeProcessLocation",
+      "isOptional" : false
+    },
+    "use_input" : {
+      "description" : "Indicates if the operator input should be used as input of the process",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "store_output" : {
+      "description" : "Indicates if the operator output should be stored (if the context of the embedded process defines output locations).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "propagate_metadata_recursively" : {
+      "description" : "Determines whether meta data is propagated through the included process.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "cache_process" : {
+      "description" : "If checked, the process will not be loaded during execution.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "macros" : {
+      "description" : "Defines macros for this sub-process.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "fail_for_unknown_macros" : {
+      "description" : "If checked, only macros defined in the embedded process' context can be defined in the 'macros' list above.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "productivity:de_obfuscate",
+  "ioHolderClass" : "com.rapidminer.extension.productivity.operator.preprocessing.Deobfuscator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "obfuscation_map_file" : {
+      "description" : "File where the obfuscator map was written to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "productivity:obfuscate",
+  "ioHolderClass" : "com.rapidminer.extension.productivity.operator.preprocessing.Obfuscator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "obfuscation_map_file" : {
+      "description" : "File where the obfuscator map should be written to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

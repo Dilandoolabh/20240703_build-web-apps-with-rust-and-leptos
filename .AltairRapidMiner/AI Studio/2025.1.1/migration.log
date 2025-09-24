@@ -1,0 +1,18 @@
+Aug 07, 2025 1:05:22 PM com.rapidminer.launcher.PreLaunchMigrationManager log
+INFO: Will check for necessary directory migration processes. If there are any, the migration might take some time, please be patient...
+Aug 07, 2025 1:05:22 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: Searching in Java classpath for AI Studio jars...
+Aug 07, 2025 1:05:22 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: Trying parent directory of 'C:\Program Files\Altair\RapidMiner\AI Studio 2025.1.1\lib\rapidminer-studio-core-11.1.1.jar'...
+Aug 07, 2025 1:05:22 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: Gotcha! 'rapidminer.home' is: C:\Program Files\Altair\RapidMiner\AI Studio 2025.1.1
+Aug 07, 2025 1:05:22 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: Release platform: WIN64
+Aug 07, 2025 1:05:23 PM com.rapidminer.tools.DirectoryService checkForMigrations
+INFO: Check for directory migration processes.
+Aug 07, 2025 1:05:23 PM com.rapidminer.tools.DirectoryService checkForMigrations
+INFO: There is no directory migration needed.
+Aug 07, 2025 1:05:23 PM com.rapidminer.launcher.PreLaunchMigrationManager log
+INFO: Migration check (and a potential migration) is done.
+Aug 07, 2025 1:05:23 PM com.rapidminer.launcher.PreLaunchMigrationManager log
+INFO: Finished all pre-launch migration processes.

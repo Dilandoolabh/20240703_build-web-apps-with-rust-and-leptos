@@ -1,0 +1,2167 @@
+[ {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.extension.cloud.connectivity.utils.LazyLoadedBufferedFileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_amazons3",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.amazon.s3.AmazonS3Reader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Amazon S3 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Amazon S3' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename of the file to download from Amazon S3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "in 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "out 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:loop_amazons3",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.amazon.s3.AmazonS3LoopFiles",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Amazon S3 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Amazon S3' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder" : {
+      "description" : "The name of the folder from Amazon S3 to iterate over.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "filter" : {
+      "description" : "Specifies a regular expression which is used as filter for the file and directory names, e.g. 'a.*b' for all files starting with 'a' and ending with 'b'. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "filtered_string" : {
+      "description" : "Indicates which part of the file name is matched against the filter expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "file_name_macro" : {
+      "description" : "Specifies the name of the macro, which delievers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "file_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path and file name of the current file. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "parent_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path of the current file's directory. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Indicates if the operator will also deliver the files / directories of subdirectories (resursively).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.operator.nio.file.FileObject",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "in 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "out 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_amazons3",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.amazon.s3.AmazonS3Writer",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Amazon S3 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Amazon S3' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename for the file on Amazon S3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "content_type" : {
+      "description" : "The content-type for the file, e.g. 'text/plain'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:delete_amazons3",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.amazon.s3.AmazonS3Delete",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "The Amazon S3 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Amazon S3' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename of the file to delete from Amazon S3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "recursive" : {
+      "description" : "If checked and a directory is chosen, the operator deletes all paths beneath the directory.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "fail_if_missing" : {
+      "description" : "Determines whether an exception should be generated if the file is not found.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.extension.cloud.connectivity.utils.LazyLoadedBufferedFileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_azureblobstorage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.blobstorage.AzureBlobStorageReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Blob Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Blob Storage' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename of the file to download from Azure Blob Storage.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "in 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "out 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:loop_azureblobstorage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.blobstorage.AzureBlobStorageLoopFiles",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Blob Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Blob Storage' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder" : {
+      "description" : "The name of the folder from Azure Blob Storage to iterate over.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "filter" : {
+      "description" : "Specifies a regular expression which is used as filter for the file and directory names, e.g. 'a.*b' for all files starting with 'a' and ending with 'b'. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "filtered_string" : {
+      "description" : "Indicates which part of the file name is matched against the filter expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "file_name_macro" : {
+      "description" : "Specifies the name of the macro, which delievers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "file_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path and file name of the current file. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "parent_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path of the current file's directory. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Indicates if the operator will also deliver the files / directories of subdirectories (resursively).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.extension.cloud.connectivity.utils.LazyLoadedBufferedFileObject",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "in 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "out 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_azureblobstorage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.blobstorage.AzureBlobStorageWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Blob Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Blob Storage' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename for the file on Azure Blob Storage.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:delete_azureblobstorage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.blobstorage.AzureBlobStorageDelete",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "The Azure Blob Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Blob Storage' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The file in Azure Blob Storage. Note that you need Read and Execute permissions on the root directory to be able to list its content.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "fail_if_missing" : {
+      "description" : "Determines whether an exception should be generated if the file is not found.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.extension.cloud.connectivity.utils.LazyLoadedBufferedFileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_azuregen2",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.gen2.AzureGen2Reader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Data Lake Storage Gen2 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Data Lake Storage Gen2' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename of the file to download from Azure Data Lake Storage Gen2. Note that you need Read and Execute permissions on the root directory to be able to list its content.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_azuregen2",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.gen2.AzureGen2Writer",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Data Lake Storage Gen2 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Data Lake Storage Gen2' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename for the file on Azure Data Lake Storage. Note that you need Read and Execute permissions on the root directory to be able to list its content.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "in 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "out 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:loop_azuregen2",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.gen2.AzureGen2LoopFiles",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Azure Data Lake Storage Gen2 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Data Lake Storage Gen2' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder" : {
+      "description" : "The name of the folder from Azure Data Lake Storage to iterate over. Note that you need Read and Execute permissions on the root directory to be able to list its content.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "filter" : {
+      "description" : "Specifies a regular expression which is used as filter for the file and directory names, e.g. 'a.*b' for all files starting with 'a' and ending with 'b'. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "filtered_string" : {
+      "description" : "Indicates which part of the file name is matched against the filter expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "file_name_macro" : {
+      "description" : "Specifies the name of the macro, which delievers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "file_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path and file name of the current file. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "parent_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path of the current file's directory. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Indicates if the operator will also deliver the files / directories of subdirectories (resursively).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.extension.cloud.connectivity.utils.LazyLoadedBufferedFileObject",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "in 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "out 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:delete_azuregen2",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.azure.gen2.AzureGen2Delete",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : false
+    },
+    "connection" : {
+      "description" : "The Azure Data Lake Storage Gen2 connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Azure Data Lake Storage Gen2' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The file in Azure Data Lake Storage. Note that you need Read and Execute permissions on the root directory to be able to list its content.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "recursive" : {
+      "description" : "If checked and a directory is chosen, the operator deletes all paths beneath the directory.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "fail_if_missing" : {
+      "description" : "Determines whether an exception should be generated if the file is not found.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_dropbox",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.dropbox.DropboxReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to the cloud storage provider Dropbox.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Dropbox' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The folder path from which to download the file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_dropbox",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.dropbox.DropboxWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to the cloud storage provider Dropbox.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Dropbox' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The folder path from which to download the file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "overwrite" : {
+      "description" : "If this option is enabled existing files will be overwritten.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_google_storage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.storage.GoogleStorageReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename of the file to download from Google Storage.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "in 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "out 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:loop_google_storage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.storage.GoogleStorageLoopFiles",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder" : {
+      "description" : "The name of the folder from Google Storage to iterate over.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "filter" : {
+      "description" : "Specifies a regular expression which is used as filter for the file and directory names, e.g. 'a.*b' for all files starting with 'a' and ending with 'b'. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "filtered_string" : {
+      "description" : "Indicates which part of the file name is matched against the filter expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "file_name_macro" : {
+      "description" : "Specifies the name of the macro, which delievers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "file_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path and file name of the current file. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "parent_path_macro" : {
+      "description" : "Specifies the name of the macro containing the absolute path of the current file's directory. Use %{macro_name} to address the file in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Indicates if the operator will also deliver the files / directories of subdirectories (resursively).",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.operator.nio.file.FileObject",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "in 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "out 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_google_storage",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.storage.GoogleStorageWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Storage connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "The filename for the file on Google Storage.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "content_type" : {
+      "description" : "The content-type for the file, e.g. 'text/plain'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_google_drive",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.drive.GoogleDriveReadOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Drive connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "Google Drive file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "mime_type_conversion" : {
+      "description" : "Set the file conversion type for Google Workspace files",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "mime_type" : {
+      "description" : "Override the the mime type conversion used when selecting manual conversion",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_google_drive",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.drive.GoogleDriveWriteOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Drive connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file_name" : {
+      "description" : "Write the file to Google Drive with this name. Alternatively, use the input file's name by setting use_original_name to true.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "use_original_name" : {
+      "description" : "If checked, the original file name will be used as the file name in Google Drive",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "folder" : {
+      "description" : "Google Drive folder",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "mime_type_conversion" : {
+      "description" : "Set the file conversion type for Google Workspace files",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "mime_type" : {
+      "description" : "Override the the mime type conversion used when selecting manual conversion",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : false
+    },
+    "file_id_macro" : {
+      "description" : "File ID of Google Drive file",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "overwrite" : {
+      "description" : "If this option is enabled, an existing file with the same name will be overwritten.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:loop_google_drive",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.drive.GoogleDriveLoopOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Drive connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder" : {
+      "description" : "Google Drive folder",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "mime_type_conversion" : {
+      "description" : "Set the file conversion type for Google Workspace files",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "set_mime_types" : {
+      "description" : "A list that can be used to define desired format via MIME types. Only the first option will be used if duplicates original MIME type entries.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "file_id_macro" : {
+      "description" : "Specifies the name of the macro, which delivers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "file_name_macro" : {
+      "description" : "Specifies the name of the macro, which delivers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "folder_id_macro" : {
+      "description" : "Specifies the name of the macro, which delivers the current file name without path. Use %{macro_name} to use the file name in suboperators.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "If selected, the loop will also iterate over all files in all subfolders of the selected folder. Otherwise, it will only iterate over the files in the selected folder.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.operator.nio.file.FileObject",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "input 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:delete_google_drive",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.drive.GoogleDriveDeleteOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Drive connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "file" : {
+      "description" : "Google Drive file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "fail_if_missing" : {
+      "description" : "Throw an error if the file id is missing",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:create_folder_google_drive",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.drive.GoogleDriveCreateFolderOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The Google Drive connection.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "folder_name" : {
+      "description" : "Folder name in Google Drive",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "parent_folder" : {
+      "description" : "Parent folder name in Google Drive",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "file_id_macro" : {
+      "description" : "File ID of Google Drive file",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_google_bigquery",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.bigquery.GoogleBigQueryWriteOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_entry" : {
+      "description" : "Indicates how the database connection should be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : true
+    },
+    "schema_name" : {
+      "description" : "Name of the schema.",
+      "className" : "com.rapidminer.parameter.ParameterTypeSuggestion",
+      "isOptional" : false
+    },
+    "table_name" : {
+      "description" : "Output table.",
+      "className" : "com.rapidminer.parameter.ParameterTypeSuggestion",
+      "isOptional" : false
+    },
+    "overwrite_mode" : {
+      "description" : "Indicates if an existing table should be overwritten or if data should be appended.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "batch_size" : {
+      "description" : "This parameter specifies the number of rows which are written at once with one single query to the database. Larger values can greatly improve the speed. However, BigQuery has restrictions on the maximum number of values written at once.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : false
+    },
+    "set_default_varchar_length" : {
+      "description" : "Set varchar columns to default length.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "default_varchar_length" : {
+      "description" : "Default length of varchar columns.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "data" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:google_sheets_iterator",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.sheets.operator.SheetsIterator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "Spreadsheet" : {
+      "description" : "Google Sheet file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "request_timeout" : {
+      "description" : "Timeout for API requests",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "data" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:google_sheets_reader",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.sheets.operator.SheetsReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "Spreadsheet" : {
+      "description" : "Google Sheet file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "range" : {
+      "description" : "The range name or cell range.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "first_row_as_names" : {
+      "description" : "Whether to read the first row as column names",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "date_time_precision" : {
+      "description" : "Precision of date and time values.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "time_zone" : {
+      "description" : "Time zone used for parsing date and time values.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "request_timeout" : {
+      "description" : "Timeout for API requests",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:google_sheets_writer",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.sheets.operator.SheetsWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "Spreadsheet" : {
+      "description" : "Google Sheet file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "Sheet" : {
+      "description" : "The sheet name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "create_sheet_if_missing" : {
+      "description" : "Create a new sheet if no sheet with the given name exists.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "write_column_names" : {
+      "description" : "Whether to write a header row",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "mode" : {
+      "description" : "Whether to append or update the sheet.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "start_column" : {
+      "description" : "Column to start the update from (zero-indexed)",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "start_row" : {
+      "description" : "Row to start the update from (zero-indexed).",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "blank_cells" : {
+      "description" : "Blank subsequent cells in the sheet.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "time_zone" : {
+      "description" : "Time zone used for parsing date and time values.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "request_timeout" : {
+      "description" : "Timeout for API requests",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    },
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:google_sheets_remover",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.google.sheets.operator.SheetsRemover",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "Spreadsheet" : {
+      "description" : "Google Sheet file",
+      "className" : "com.rapidminer.parameter.ParameterTypeRemoteFile",
+      "isOptional" : false
+    },
+    "Sheet" : {
+      "description" : "The sheet name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "request_timeout" : {
+      "description" : "Timeout for API requests",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:read_salesforce",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.salesforce.SalesforceReader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Salesforce' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "query" : {
+      "description" : "The SOQL query to Salesforce.",
+      "className" : "com.rapidminer.extension.cloud.connectivity.parameter.ParameterTypeSalesForceQuery",
+      "isOptional" : false
+    },
+    "guess_value_types" : {
+      "description" : "If selected, tries to guess the attribute value types based on the values in the first row.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "batch_size" : {
+      "description" : "The batch size for the SOQL query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:write_salesforce",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.salesforce.SalesforceWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "object_name" : {
+      "description" : "The Salesforce object to create records for.",
+      "className" : "com.rapidminer.parameter.ParameterTypeSuggestion",
+      "isOptional" : false
+    },
+    "salesforce_id_column" : {
+      "description" : "The name of the column for the returned Salesforce IDs for the created records.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "skip_invalid_rows" : {
+      "description" : "If selected, skips and ignores failed creations of a record. If not selected, the process will fail if a record cannot be created and no records will be created in Salesforce at all.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "attribute_filter_type" : {
+      "description" : "The condition specifies which attributes are selected or affected by this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "attributes" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$1",
+      "isOptional" : true
+    },
+    "use_except_expression" : {
+      "description" : "If enabled, an exception to the specified regular expression might be specified. Attributes of matching this will be filtered out, although matching the first expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$2",
+      "isOptional" : true
+    },
+    "value_type" : {
+      "description" : "The value type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_value_type_exception" : {
+      "description" : "If enabled, an exception to the specified value type might be specified. Attributes of this type will be filtered out, although matching the first specified type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_value_type" : {
+      "description" : "Except this value type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "block_type" : {
+      "description" : "The block type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_block_type_exception" : {
+      "description" : "If enabled, an exception to the specified block type might be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_block_type" : {
+      "description" : "Except this block type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numeric_condition" : {
+      "description" : "Parameter string for the condition, e.g. '>= 5'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "invert_selection" : {
+      "description" : "Indicates if only attributes should be accepted which would normally filtered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_special_attributes" : {
+      "description" : "Indicate if this operator should also be applied on the special attributes. Otherwise they are always kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:update_salesforce",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.salesforce.SalesforceUpdater",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Salesforce' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "object_name" : {
+      "description" : "The name of the Salesforce object for which to update records.",
+      "className" : "com.rapidminer.parameter.ParameterTypeSuggestion",
+      "isOptional" : false
+    },
+    "skip_invalid" : {
+      "description" : "If selected, skips and ignores failed creations of a record. In such cases, the ID column value is set to missing. If not selected, the process will fail if a record cannot be created and no records will be created in Salesforce at all.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "attribute_filter_type" : {
+      "description" : "The condition specifies which attributes are selected or affected by this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "attributes" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$1",
+      "isOptional" : true
+    },
+    "use_except_expression" : {
+      "description" : "If enabled, an exception to the specified regular expression might be specified. Attributes of matching this will be filtered out, although matching the first expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$2",
+      "isOptional" : true
+    },
+    "value_type" : {
+      "description" : "The value type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_value_type_exception" : {
+      "description" : "If enabled, an exception to the specified value type might be specified. Attributes of this type will be filtered out, although matching the first specified type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_value_type" : {
+      "description" : "Except this value type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "block_type" : {
+      "description" : "The block type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_block_type_exception" : {
+      "description" : "If enabled, an exception to the specified block type might be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_block_type" : {
+      "description" : "Except this block type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numeric_condition" : {
+      "description" : "Parameter string for the condition, e.g. '>= 5'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "invert_selection" : {
+      "description" : "Indicates if only attributes should be accepted which would normally filtered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_special_attributes" : {
+      "description" : "Indicate if this operator should also be applied on the special attributes. Otherwise they are always kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:delete_salesforce",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.salesforce.SalesforceRemover",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Salesforce' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "skip_invalid" : {
+      "description" : "If selected, any failed deletion of an entry causes all changes for the call to be rolled back.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set in" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "example set out" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "cloud_connectivity:trigger_zapier",
+  "ioHolderClass" : "com.rapidminer.extension.cloud.connectivity.operator.zapier.TriggerZapier",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "zapier_url" : {
+      "description" : "The URL of the Zap created on the Zapier webpage. The URL has to start with https.",
+      "className" : "com.rapidminer.extension.cloud.connectivity.parameter.ParameterTypeZapierURL",
+      "isOptional" : false
+    },
+    "test_hook" : {
+      "description" : "Test the Zapier web hook without triggering the Zap.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

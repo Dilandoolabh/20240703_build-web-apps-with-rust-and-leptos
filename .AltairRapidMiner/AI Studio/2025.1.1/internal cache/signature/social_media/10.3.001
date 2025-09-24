@@ -1,0 +1,303 @@
+[ {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "social_media:search_twitter",
+  "ioHolderClass" : "com.rapidminer.extension.socialmedia.operator.web.services.twitter.SearchTwitterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to Twitter.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Twitter' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "query" : {
+      "description" : "The term that should be searched.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "result_type" : {
+      "description" : "Specifies the preferred search result type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "limit" : {
+      "description" : "The limit for the number of results.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "since_id" : {
+      "description" : "Returns results with an ID greater than (that is, more recent than) the specified ID.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "max_id" : {
+      "description" : "Returns results with an ID less than (that is, older than) or equal to the specified ID.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "language" : {
+      "description" : "Restricts tweets to the given language, specified by an ISO 639-1 code.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "locale" : {
+      "description" : "Specify the language of the query you are sending. (The official Twitter API mentions, that only 'ja' is currently effective)",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "until" : {
+      "description" : "Returns tweets generated before the given date. The values year, month, and day are used as search parameters.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDate",
+      "isOptional" : true
+    },
+    "filter_by_geo_location" : {
+      "description" : "If checked, search results are filtered by their distance from a given geo location.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "latitude" : {
+      "description" : "The latitude of the geo location.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "longitude" : {
+      "description" : "The longitude of the geo location.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "radius" : {
+      "description" : "The radius of the geo location.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "radius_unit" : {
+      "description" : "The type of the geo location radius.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "social_media:get_twitter_user_statuses",
+  "ioHolderClass" : "com.rapidminer.extension.socialmedia.operator.web.services.twitter.GetTwitterUserStatusesOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to Twitter.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Twitter' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "query_type" : {
+      "description" : "Specifies whether a user should be searched by id or screen name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "id" : {
+      "description" : "The id of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "user" : {
+      "description" : "The screen name of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "limit" : {
+      "description" : "The limit for the number of results.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "since_id" : {
+      "description" : "Returns results with an ID greater than (that is, more recent than) the specified ID.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "max_id" : {
+      "description" : "Returns results with an ID less than (that is, older than) or equal to the specified ID.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "social_media:get_twitter_user_details",
+  "ioHolderClass" : "com.rapidminer.extension.socialmedia.operator.web.services.twitter.GetTwitterUserDetailsOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to Twitter.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Twitter' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "query_type" : {
+      "description" : "Specifies whether a user should be searched by id or screen name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "id" : {
+      "description" : "The id of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "user" : {
+      "description" : "The screen name of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "social_media:get_twitter_relations",
+  "ioHolderClass" : "com.rapidminer.extension.socialmedia.operator.web.services.twitter.GetTwitterRelationsOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "connection_source" : {
+      "description" : "select where to look for connections",
+      "className" : "com.rapidminer.connection.adapter.ConnectionAdapterHandler$3",
+      "isOptional" : true
+    },
+    "connection" : {
+      "description" : "The connection to Twitter.",
+      "className" : "com.rapidminer.tools.config.ParameterTypeConfigurable",
+      "isOptional" : true
+    },
+    "connection_entry" : {
+      "description" : "Select a connection of type 'Twitter' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "query_type" : {
+      "description" : "Specifies whether a user should be searched by id or screen name.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "id" : {
+      "description" : "The id of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeLong",
+      "isOptional" : true
+    },
+    "user" : {
+      "description" : "The screen name of the user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "relation" : {
+      "description" : "Specifies whether friends or followers of that user should be retrieved.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

@@ -1,0 +1,340 @@
+[ {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:read_weights",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.AttributeWeightsLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_weights_file" : {
+      "description" : "Filename of the attribute weights file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:read_constructions",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.AttributeConstructionsLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_constructions_file" : {
+      "description" : "Filename for the attribute constructions file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "keep_all" : {
+      "description" : "If set to true, all the original attributes are kept, otherwise they are removed from the example set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.performance.PerformanceVector",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:read_performance",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.PerformanceLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "performance_file" : {
+      "description" : "Filename for the performance file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.meta.ParameterSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:read_parameters",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.ParameterSetLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "parameter_file" : {
+      "description" : "A file containing a parameter set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.postprocessing.Threshold",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:read_threshold",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.ThresholdLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "threshold_file" : {
+      "description" : "Filename for the threshold file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:write_weights",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.AttributeWeightsWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_weights_file" : {
+      "description" : "Filename for the attribute weight file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:write_constructions",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.AttributeConstructionsWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_constructions_file" : {
+      "description" : "Filename for the attribute construction description file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.operator.performance.PerformanceVector",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.operator.performance.PerformanceVector",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:write_performance",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.PerformanceWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "performance_file" : {
+      "description" : "Filename for the performance file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.operator.meta.ParameterSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.operator.meta.ParameterSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:write_parameters",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.ParameterSetWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "parameter_file" : {
+      "description" : "A file containing a parameter set.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.operator.postprocessing.Threshold",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "through" : {
+      "className" : "com.rapidminer.operator.postprocessing.Threshold",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "legacy:write_threshold",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.ThresholdWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "threshold_file" : {
+      "description" : "Filename for the threshold file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "legacy:write_gnuplot",
+  "ioHolderClass" : "com.rapidminer.extension.legacy.operator.io.GNUPlotOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "output_file" : {
+      "description" : "The gnuplot file.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "name" : {
+      "description" : "The name of the process log operator which produced the data table.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "title" : {
+      "description" : "The title of the plot.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "x_axis" : {
+      "description" : "The values of the x-axis.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "y_axis" : {
+      "description" : "The values of the y-axis (for 3d plots).",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "values" : {
+      "description" : "A whitespace separated list of values which should be plotted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "additional_parameters" : {
+      "description" : "Additional parameters for the gnuplot header.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

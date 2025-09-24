@@ -1,0 +1,10 @@
+[v1]
+"cargo-binstall 1.15.5 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-binstall.exe"]
+"cargo-expand 1.0.116 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-expand.exe"]
+"cargo-leptos 0.2.44 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-leptos.exe"]
+"leptosfmt 0.1.33 (registry+https://github.com/rust-lang/crates.io-index)" = ["leptosfmt.exe"]
+"sqlx-cli 0.8.6 (registry+https://github.com/rust-lang/crates.io-index)" = [
+    "cargo-sqlx.exe",
+    "sqlx.exe",
+]
+"trunk 0.21.14 (registry+https://github.com/rust-lang/crates.io-index)" = ["trunk.exe"]

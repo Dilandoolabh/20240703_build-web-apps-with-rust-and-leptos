@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><usageStatistics closed-at="2025-08-07T22:58:55.285+02:00[Africa/Johannesburg]" initial-setup="2025-07-16T13:12:49.418+02:00[Africa/Johannesburg]" jvm-max-heap="11840" last-reset="2025-08-07T22:58:54.764+02:00[Africa/Johannesburg]" lid="d0d346aa-92f6-4af4-8ec0-97ffc3403a0d" next-transmission="2025-08-07T23:58:55.285+02:00[Africa/Johannesburg]" os-cores="12" os-memory="15771" os-name="Windows 11" os-version="10.0" random-key="XMLJFQOXBRNVRNKY" rapidminer-version="2025.1.001" resolution="1440x900|2880x1800">
+  <action-statistics os-name="Windows 11" os-version="10.0">
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>runtime_MAX</arg>
+      <count>520</count>
+    </action>
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>completed</arg>
+      <count>1</count>
+    </action>
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>runtime_MIN</arg>
+      <count>520</count>
+    </action>
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>runtime_COUNT</arg>
+      <count>1</count>
+    </action>
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>runtime</arg>
+      <count>520</count>
+    </action>
+    <action>
+      <type>progress-thread</type>
+      <value>transmit_usagestats</value>
+      <arg>started</arg>
+      <count>1</count>
+    </action>
+  </action-statistics>
+</usageStatistics>

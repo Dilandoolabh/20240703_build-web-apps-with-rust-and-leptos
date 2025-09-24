@@ -1,0 +1,2602 @@
+[ {
+  "inputs" : {
+    "Example Set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "Example Set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:generate_extract",
+  "ioHolderClass" : "com.rapidminer.operator.text.features.construction.TextInformationExtractionOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "source_attribute" : {
+      "description" : "The content of this nominal attribute is used for extracting information.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "query_type" : {
+      "description" : "Specifies the type of the query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string_machting_queries" : {
+      "description" : "Specifies a list of string matching start and end sequences. Everything between will be used as result. See the operator documentation for details on string matching.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "attribute_type" : {
+      "description" : "Specifies the type of the resulting attributes. If numerical or binomial is choosen, ensure that the returned result is interpretable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "regular_expression_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. The first matching group is used as value. See the operator documentation for details on regular expressions.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "regular_region_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. Two regular expressions might be specified in order to define the start and the end of a region. Everything in between the two matches will be delivered as result.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "xpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding XPath queries. See the operator documentation for details on XPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "namespaces" : {
+      "description" : "Specifies pairs of identifier and namespace for use in XPath queries. The namespace for (x)html is bound automatically to the identifier h.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "ignore_CDATA" : {
+      "description" : "Indicates if CDATA should be ignored when using the XPATH expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "assume_html" : {
+      "description" : "If checked a more tolerant xml parser will be used, which copes with forbidden HTML constructions, but always assumes HTML and adds missing tags. For plain XML uncheck this.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "index_queries" : {
+      "description" : "Specifies a list of attribute names and the regions. Regions are specified as offset index and length of the match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "jsonpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding JsonPath queries. See the operator documentation for details on JsonPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "value_seperator" : {
+      "description" : "The character separating two values of the same query results. See operator info for more details.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "value_separator" : {
+      "description" : "The character separating two values of the same query results. See operator info for more details.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "text:split_file_by_content",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.segmenter.FileSegmentingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "preview" : {
+      "description" : "Shows a preview for the results which will be achieved by the current configuration.",
+      "className" : "com.rapidminer.parameter.ParameterTypePreview",
+      "isOptional" : true
+    },
+    "matching_mode" : {
+      "description" : "This parameter determines which mode for selecting the segments is used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "xpath_query" : {
+      "description" : "Specifies the XPath expression that matches against substrings of the content which should be treated as individual segments. Each match is treated as single segment.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "namespaces" : {
+      "description" : "Specifies pairs of identifier and namespace for use in XPath queries. The namespace for (x)html is bound automatically to the identifier h.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "ignore_cdata" : {
+      "description" : "Specifies whether CDATA should be ignored when parsing HTML",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "assume_html" : {
+      "description" : "If checked a more tolerant xml parser will be used, which copes with forbidden HTML constructions, but always assumes HTML and adds missing tags. For plain XML uncheck this.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "regular_expression" : {
+      "description" : "Specifies the regular expression that matches against substrings of the content which should be treated as individual segments. Each match is treated as single segment.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "segment_expression" : {
+      "description" : "Specifies the expression, which is used to replace the found match of the regular expression above. Matchinggroups might be used to specify e.g. content of attributes without including the surrounding attributes itself.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "start string" : {
+      "description" : "Specifies the String used as startpoint in string matching. The text between the start string and the end string, both exclusive, is threated as segment.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "end string" : {
+      "description" : "Specifies the String used as endpoint in string matching. The text between the start string and the end string, both exclusive, is threated as segment.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "json_path_query" : {
+      "description" : "Specifies the JSONPath expression that matches against substrings of the content which should be treated as individual segments. Each match is treated as single segment.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "texts" : {
+      "description" : "A directory containing the documents to be segmented",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : false
+    },
+    "output" : {
+      "description" : "The directory to which to write the segments",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : false
+    },
+    "use_file_extension_as_type" : {
+      "description" : "If checked, the type of the files will be determined by their extensions. Unknown extensions will be treated as text files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "content_type" : {
+      "description" : "The content type of the input texts",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "text:split_file_by_point",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.segmenter.FileSplittingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "preview" : {
+      "description" : "Shows a preview for the results which will be achieved by the current configuration.",
+      "className" : "com.rapidminer.parameter.ParameterTypePreview",
+      "isOptional" : true
+    },
+    "texts" : {
+      "description" : "A directory containing the documents to be segmented",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : false
+    },
+    "output_directory" : {
+      "description" : "The directory to which to write the segments",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : false
+    },
+    "split_expression" : {
+      "description" : "Specifies the split points in the documents using a regular expression. For example \n splits on every line break.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : false
+    },
+    "use_file_extension_as_type" : {
+      "description" : "If checked, the type of the files will be determined by their extensions. Unknown extensions will be treated as text files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "content_type" : {
+      "description" : "The content type of the input texts",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:wordlist_to_data",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.WordList2ExampleSetOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:json_to_data",
+  "ioHolderClass" : "com.rapidminer.operator.text.tools.transformation.JSONDocumentsToData",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "ignore_arrays" : {
+      "description" : "Do not extract data in (nested) arrays.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "limit_attributes" : {
+      "description" : "Only extract attributes that occur at least the specified number of times.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "minimal_examples_(absolute)" : {
+      "description" : "Required minimum of examples for each attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "skip_invalid_documents" : {
+      "description" : "Skip invalid documents and continue process execution.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "guess_data_types" : {
+      "description" : "Guess data types.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "keep_missing_attributes" : {
+      "description" : "Keep attributes without any values.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "missing_values_aliases" : {
+      "description" : "Configure aliases for missing values.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "preserve_attribute_order" : {
+      "description" : "Preserve order of attribute names.<p> If unchecked, the attributes are sorted alphabetically.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set 1" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "documents" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:data_to_json",
+  "ioHolderClass" : "com.rapidminer.operator.text.tools.transformation.DataToJSONDocuments",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "ignore_arrays" : {
+      "description" : "Do not extract data in (nested) arrays.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "generate_array" : {
+      "description" : "Generate a single JSON array instead of a collection of JSON documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_missing_values" : {
+      "description" : "Include missing values as null.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "preserve_attribute_order" : {
+      "description" : "Preserve order of attribute names.<p> If unchecked, the attributes are sorted alphabetically.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:create_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.SingleDocumentInputOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "text" : {
+      "description" : "The text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeText",
+      "isOptional" : false
+    },
+    "add label" : {
+      "description" : "Add a label value to the text as meta data.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "label_type" : {
+      "description" : "The value type of the label.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "label_value" : {
+      "description" : "The label value.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:read_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.DocumentLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "file" : {
+      "description" : "Name of the file to read the data from.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "extract_text_only" : {
+      "description" : "If checked, structural information like xml or html tags will be ignored and discarded.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "use_file_extension_as_type" : {
+      "description" : "If checked, the type of the files will be determined by their extensions. Unknown extensions will be treated as text files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "content_type" : {
+      "description" : "The content type of the input texts",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:write_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.DocumentWriter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "file" : {
+      "description" : "Name of the file to write the data in.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "overwrite" : {
+      "description" : "Specifies if an existing file with given name should be overwritten.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:extract_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.DocumentExtractor",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_name" : {
+      "description" : "The name of the attribute from which the data should be derived.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "example_index" : {
+      "description" : "The index of the example from which the data should be derived. Negative indices are counted from the end of the data set. Positive counting starts with 1, negative counting with -1.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:process_documents",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.DocumentTextInputOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "create_word_vector" : {
+      "description" : "If checked, the tokens of a document will be used to generate a vector numerically representing the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "vector_creation" : {
+      "description" : "Select the schema for creating the word vector.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "add_meta_information" : {
+      "description" : "If checked, available meta information of the text like filename, date is added as attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "keep_text" : {
+      "description" : "If checked, the input text will be stored as a special String attribute with the role text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "prune_method" : {
+      "description" : "Specifies if to frequent or to infrequent words should be ignored for word list building and how the frequencies are specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "prune_below_percent" : {
+      "description" : "Ignore words that appear in less than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_percent" : {
+      "description" : "Ignore words that appear in more than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_below_absolute" : {
+      "description" : "Ignore words that appear in less than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_above_absolute" : {
+      "description" : "Ignore words that appear in more than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_below_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or less than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or higher than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "datamanagement" : {
+      "description" : "Determines, how the data is represented internally.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "document" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:process_document_from_data",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.ExampleSetDocumentInputOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "create_word_vector" : {
+      "description" : "If checked, the tokens of a document will be used to generate a vector numerically representing the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "vector_creation" : {
+      "description" : "Select the schema for creating the word vector.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "add_meta_information" : {
+      "description" : "If checked, available meta information of the text like filename, date is added as attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "keep_text" : {
+      "description" : "If checked, the input text will be stored as a special String attribute with the role text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "prune_method" : {
+      "description" : "Specifies if to frequent or to infrequent words should be ignored for word list building and how the frequencies are specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "prune_below_percent" : {
+      "description" : "Ignore words that appear in less than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_percent" : {
+      "description" : "Ignore words that appear in more than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_below_absolute" : {
+      "description" : "Ignore words that appear in less than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_above_absolute" : {
+      "description" : "Ignore words that appear in more than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_below_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or less than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or higher than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "datamanagement" : {
+      "description" : "Determines, how the data is represented internally.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "select_attributes_and_weights" : {
+      "description" : "If checked, you might select the used text attributes and their weights. Otherwise all text attributes are used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "specify_weights" : {
+      "description" : "This parameters allows to set weights per attribute. Text from attributes with higher weight will be more imporant during analysis.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "document" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:process_document_from_file",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.FileDocumentInputOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "text_directories" : {
+      "description" : "In this list arbitrary directories can be specified. All files matching the given file ending will be loaded and assigned to the class value provided with the directory.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "file_pattern" : {
+      "description" : "A pattern for the file to be read. Usual wildcards like ? and * are supported.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "extract_text_only" : {
+      "description" : "If checked, structural information like xml or html tags will be ignored and discarded.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "use_file_extension_as_type" : {
+      "description" : "If checked, the type of the files will be determined by their extensions. Unknown extensions will be treated as text files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "content_type" : {
+      "description" : "The content type of the input texts",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    },
+    "create_word_vector" : {
+      "description" : "If checked, the tokens of a document will be used to generate a vector numerically representing the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "vector_creation" : {
+      "description" : "Select the schema for creating the word vector.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "add_meta_information" : {
+      "description" : "If checked, available meta information of the text like filename, date is added as attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "keep_text" : {
+      "description" : "If checked, the input text will be stored as a special String attribute with the role text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "prune_method" : {
+      "description" : "Specifies if to frequent or to infrequent words should be ignored for word list building and how the frequencies are specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "prune_below_percent" : {
+      "description" : "Ignore words that appear in less than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_percent" : {
+      "description" : "Ignore words that appear in more than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_below_absolute" : {
+      "description" : "Ignore words that appear in less than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_above_absolute" : {
+      "description" : "Ignore words that appear in more than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_below_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or less than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or higher than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "datamanagement" : {
+      "description" : "Determines, how the data is represented internally.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "document" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "word list" : {
+      "className" : "com.rapidminer.operator.text.WordList",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "text:process_mail_documents",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.MailTextInputOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "mail_account" : {
+      "description" : "Select a connection of type 'Email (retrieve)' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "create_word_vector" : {
+      "description" : "If checked, the tokens of a document will be used to generate a vector numerically representing the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "vector_creation" : {
+      "description" : "Select the schema for creating the word vector.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "add_meta_information" : {
+      "description" : "If checked, available meta information of the text like filename, date is added as attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "keep_text" : {
+      "description" : "If checked, the input text will be stored as a special String attribute with the role text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "prune_method" : {
+      "description" : "Specifies if to frequent or to infrequent words should be ignored for word list building and how the frequencies are specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "prune_below_percent" : {
+      "description" : "Ignore words that appear in less than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_percent" : {
+      "description" : "Ignore words that appear in more than this percentage of all documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_below_absolute" : {
+      "description" : "Ignore words that appear in less than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_above_absolute" : {
+      "description" : "Ignore words that appear in more than that many documents.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "prune_below_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or less than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "prune_above_rank" : {
+      "description" : "Words are ordered by frequency and words with a frequency equal or higher than the frequency of the rank given by this percentage will be pruned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "datamanagement" : {
+      "description" : "Determines, how the data is represented internally.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "define_store" : {
+      "description" : "Mail store connection can be defined by using either a session bound to a JNDI name, or explicitly by specifying host and user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name referencing a mail session.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "host" : {
+      "description" : "IMAP or POP3 host name",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "user" : {
+      "description" : "IMAP or POP3  user name",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "IMAP or POP3 password",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "connection_properties" : {
+      "description" : "Additional properties for the mail store.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "protocol" : {
+      "description" : "IMAP or POP3 ",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : false
+    },
+    "break_on_invalid_emails" : {
+      "description" : "If checked, the process will break as soon an invalid email occurs. Otherwise the process will try to read every email and terminate successfully.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "only_unseen" : {
+      "description" : "If checked, only new unseen messages will be processed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "mark_seen" : {
+      "description" : "If checked, all processed messages will be marked read. Only works with IMAP, not with POP3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "delete_messages" : {
+      "description" : "If checked, all processed messages will be deleted. Especially useful for POP3",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Recurse into subfolders?",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "folder" : {
+      "description" : "Name of the IMAP or POP3 folder to scan",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "download attachments" : {
+      "description" : "select to download mails and attachments",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "attachment file-pattern" : {
+      "description" : "A pattern for the attachment you want to select. Usual wildcards like ? and * are supported.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "attachment MIME-type" : {
+      "description" : "type in the MIME-type you want to select.(if this label and all additional labels are empty all MIME-types are selected)",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "document" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "attachments" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "connection" : {
+      "className" : "com.rapidminer.connection.ConnectionInformationContainerIOObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    },
+    "connection" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "text:read_documents_mail",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.MailStoreDocumentLoader",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "mail_account" : {
+      "description" : "Select a connection of type 'Email (retrieve)' from a repository",
+      "className" : "com.rapidminer.parameter.ParameterTypeConnectionLocation",
+      "isOptional" : false
+    },
+    "define_store" : {
+      "description" : "Mail store connection can be defined by using either a session bound to a JNDI name, or explicitly by specifying host and user.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "jndi_name" : {
+      "description" : "JNDI name referencing a mail session.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "host" : {
+      "description" : "IMAP or POP3 host name",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "user" : {
+      "description" : "IMAP or POP3  user name",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "password" : {
+      "description" : "IMAP or POP3 password",
+      "className" : "com.rapidminer.parameter.ParameterTypePassword",
+      "isOptional" : true
+    },
+    "connection_properties" : {
+      "description" : "Additional properties for the mail store.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "protocol" : {
+      "description" : "IMAP or POP3 ",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : false
+    },
+    "break_on_invalid_emails" : {
+      "description" : "If checked, the process will break as soon an invalid email occurs. Otherwise the process will try to read every email and terminate successfully.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "only_unseen" : {
+      "description" : "If checked, only new unseen messages will be processed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "mark_seen" : {
+      "description" : "If checked, all processed messages will be marked read. Only works with IMAP, not with POP3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "delete_messages" : {
+      "description" : "If checked, all processed messages will be deleted. Especially useful for POP3",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Recurse into subfolders?",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "folder" : {
+      "description" : "Name of the IMAP or POP3 folder to scan",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:documents_to_data",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.Document2ExampleSet",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "text_attribute" : {
+      "description" : "The name of the text attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "label_attribute" : {
+      "description" : "The name of the label attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "add_meta_information" : {
+      "description" : "If checked, available meta information of the text like filename, date is added as attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "datamanagement" : {
+      "description" : "Determines, how the data is represented internally.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "data_management" : {
+      "description" : "The data management optimization to use. Determines, how the data is represented internally. The auto option (default) only compresses data if it is very sparse and otherwise optimizes for speed. Choose speed-optimized if you have enough memory and want to speed up your process. Choose memory-optimized if you have a lot of sparse data that has trouble fitting into memory with auto mode.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_processed_text" : {
+      "description" : "If set to true the processed text is converted and not the original text. This corresponds to the upper window in the Document Result View rather than the lower.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "documents" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:data_to_documents",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.ExampleSet2Documents",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "select_attributes_and_weights" : {
+      "description" : "If checked, you might select the used text attributes and their weights. Otherwise all text attributes are used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "specify_weights" : {
+      "description" : "This parameters allows to set weights per attribute. Text from attributes with higher weight will be more imporant during analysis.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:tokenize",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.tokenizer.StringTokenizerOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "mode" : {
+      "description" : "This selects the tokenization mode. Depending on the mode, split points are chosen differently.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "characters" : {
+      "description" : "The incoming document will be split into tokens on each of this characters. For example enter a '.' for splitting into sentences.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "expression" : {
+      "description" : "This regular expression defines the splitting point.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "language" : {
+      "description" : "The language for the used part of speech (POS) tagger.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "max_token_length" : {
+      "description" : "The maximal token length of the tokens",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:extract_information",
+  "ioHolderClass" : "com.rapidminer.operator.text.extraction.DocumentInformationExtractingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "query_type" : {
+      "description" : "Specifies the type of the query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string_machting_queries" : {
+      "description" : "Specifies a list of string matching start and end sequences. Everything between will be used as result. See the operator documentation for details on string matching.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "attribute_type" : {
+      "description" : "Specifies the type of the resulting attributes. If numerical or binomial is choosen, ensure that the returned result is interpretable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "regular_expression_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. The first matching group is used as value. See the operator documentation for details on regular expressions.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "regular_region_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. Two regular expressions might be specified in order to define the start and the end of a region. Everything in between the two matches will be delivered as result.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "xpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding XPath queries. See the operator documentation for details on XPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "namespaces" : {
+      "description" : "Specifies pairs of identifier and namespace for use in XPath queries. The namespace for (x)html is bound automatically to the identifier h.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "ignore_CDATA" : {
+      "description" : "Indicates if CDATA should be ignored when using the XPATH expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "assume_html" : {
+      "description" : "If checked a more tolerant xml parser will be used, which copes with forbidden HTML constructions, but always assumes HTML and adds missing tags. For plain XML uncheck this.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "index_queries" : {
+      "description" : "Specifies a list of attribute names and the regions. Regions are specified as offset index and length of the match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "jsonpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding JsonPath queries. See the operator documentation for details on JsonPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:extract_length",
+  "ioHolderClass" : "com.rapidminer.operator.text.extraction.DocumentLengthExtractingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "metadata_key" : {
+      "description" : "The number of characters will be added under this key. The key will become the name of the attribute after document processing.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:extract_token_number",
+  "ioHolderClass" : "com.rapidminer.operator.text.extraction.TokenNumberExtractingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "metadata_key" : {
+      "description" : "The number of tokens will be added under this key. The key will become the name of the attribute after document processing.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "condition" : {
+      "description" : "The condition a document must fulfill to be kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string" : {
+      "description" : "The string that should be compared to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "The regular expression for that should match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "case_sensitive" : {
+      "description" : "Specifies whether the comparison should be case-sensitive.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "invert_condition" : {
+      "description" : "Specifies whether comparison outcome should be inverted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:aggregate_token_length",
+  "ioHolderClass" : "com.rapidminer.operator.text.extraction.TokenLengthAggregateExtractingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "metadata_key" : {
+      "description" : "The aggregated value of the tokens' length will be saved under this meta data key. The key will become the name of the attribute after document processing.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "aggregation" : {
+      "description" : "This specifies how the tokens' lengths are aggregated to one single number.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document collection" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:aggregate_meta_data",
+  "ioHolderClass" : "com.rapidminer.operator.text.extraction.MetaDataAggregatingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "source_metadata_key" : {
+      "description" : "Specifies the key of the metadata that will be aggregated.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "result_metadata_key" : {
+      "description" : "The aggregated value of the documents meta data specified by the source key will be saved under this meta data key. The key will become the name of the attribute after document processing.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "aggregation" : {
+      "description" : "This specifies how the tokens' lengths are aggregated to one single number.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_by_length",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.TokenLengthFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "min_chars" : {
+      "description" : "The minimal number of characters that a token must contain to be considered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "max_chars" : {
+      "description" : "The maximal number of characters that a token must contain to be considered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_tokens_by_content",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.TokenContentFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "condition" : {
+      "description" : "The condition a document must fulfill to be kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string" : {
+      "description" : "The string that should be compared to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "regular_expression" : {
+      "description" : "The regular expression for that should match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "case_sensitive" : {
+      "description" : "Specifies whether the comparison should be case-sensitive.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "invert condition" : {
+      "description" : "Specifies whether comparison outcome should be inverted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_tokens_by_regions",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.TokenRegionFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "condition" : {
+      "description" : "The condition a document must fulfill to be kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string" : {
+      "description" : "The string that should be compared to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "regular_expression" : {
+      "description" : "The regular expression for that should match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "case_sensitive" : {
+      "description" : "Specifies whether the comparison should be case-sensitive.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "invert condition" : {
+      "description" : "Specifies whether comparison outcome should be inverted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "tokens_before" : {
+      "description" : "The maximum number of tokens kept before the specified token.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "tokens_after" : {
+      "description" : "The maximum number of tokens kept after the specified token.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_tokens_by_pos_ratios",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.TokenPOSRatioFilter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "language_source" : {
+      "description" : "Specifies whether the language is set explicitely by the user or specified as a meta data attribute in the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "language" : {
+      "description" : "The language for the used part of speech (POS) tagger.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : false
+    },
+    "language_attribute" : {
+      "description" : "The meta data attribute key that contains the iso language code of the document.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "min_ratio_adjectives" : {
+      "description" : "The minimum ratio of adjectives for each token to be kept",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "min_ratio_nouns" : {
+      "description" : "The minimum ratio of nouns for each token to be kept",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "min_ratio_verbs" : {
+      "description" : "The minimum ratio of verbs for each token to be kept",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_tokens_by_pos",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.TokenPOSFilter",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "language" : {
+      "description" : "The language for the used part of speech (POS) tagger.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "expression" : {
+      "description" : "The regular expression used for matching the POS tags (STTS for German and PENN for English).",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "invert_filter" : {
+      "description" : "Indicates if the filter should be inverted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_dictionary",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.StopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "file" : {
+      "description" : "File that contains the stopwords one per line",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    },
+    "case_sensitive" : {
+      "description" : "Should words be matched case sensitive",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "encoding" : {
+      "description" : "The encoding used for reading or writing files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_english",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.EnglishStopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_german",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.GermanStopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "stop_word_list" : {
+      "description" : "Select the stop word list. Changing the list might improve the performance for certain tasks.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_french",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.FrenchStopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_czech",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.CzechStopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_stopwords_arabic",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.wordfilter.ArabicStopwordFilterOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "documents" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:filter_documents_by_content",
+  "ioHolderClass" : "com.rapidminer.operator.text.filter.documents.DocumentFilterByContentOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "condition" : {
+      "description" : "The condition a document must fulfill to be kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string" : {
+      "description" : "The string that should be compared to.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    },
+    "regular_expression" : {
+      "description" : "The regular expression for that should match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "case_sensitive" : {
+      "description" : "Specifies whether the comparison should be case-sensitive.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "invert condition" : {
+      "description" : "Specifies whether comparison outcome should be inverted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_snowball",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.SnowballStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "language" : {
+      "description" : "Determines the language of the texts. Different languages needs different stemming algorithms.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_porter",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.PorterStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_lovins",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.LovinsStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "file" : {
+      "className" : "com.rapidminer.operator.nio.file.FileObject",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_dictionary",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.DictionaryStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "file" : {
+      "description" : "File that contains the dictionary. See operator reference for the file format.",
+      "className" : "com.rapidminer.parameter.ParameterTypeFile",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_german",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.GermanStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_arabic_light",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.arabic.ArabicLightStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:stem_arabic",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.stemmer.arabic.ArabicStemmingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:transform_cases",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.CaseTransformationOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "transform_to" : {
+      "description" : "Specifies whether tokens should be converted to lowercase or uppercase, respectively.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:replace_tokens",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.TokenReplaceOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "replace_dictionary" : {
+      "description" : "Defines the replacements.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:remove_document_parts",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.DocumentCleaningOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "deletion_regex" : {
+      "description" : "This regular expression specifies the parts of the string, which are deleted.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:keep_document_parts",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.DocumentFilteringOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "extraction_regex" : {
+      "description" : "This regular expression specifies the part of the string, which is extracted and returned.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:generate_n_grams_characters",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.tokenizer.NGramTokenizerOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "length" : {
+      "description" : "The length n of the n-grams.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "keep_terms" : {
+      "description" : "Indicates if the original terms (i.e. tokens) should be kept along with the created n-grams.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:generate_n_grams_terms",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.tokenizer.TermNGramGeneratorOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "max_length" : {
+      "description" : "The maximal length of the ngrams.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "documents" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:cut_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.segmenter.DocumentSegmentingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "query_type" : {
+      "description" : "Specifies the type of the query.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "string_machting_queries" : {
+      "description" : "Specifies a list of string matching start and end sequences. Everything between will be used as result. See the operator documentation for details on string matching.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "attribute_type" : {
+      "description" : "Specifies the type of the resulting attributes. If numerical or binomial is choosen, ensure that the returned result is interpretable.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "regular_expression_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. The first matching group is used as value. See the operator documentation for details on regular expressions.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "regular_region_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding regular expressions. Two regular expressions might be specified in order to define the start and the end of a region. Everything in between the two matches will be delivered as result.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "xpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding XPath queries. See the operator documentation for details on XPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "namespaces" : {
+      "description" : "Specifies pairs of identifier and namespace for use in XPath queries. The namespace for (x)html is bound automatically to the identifier h.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "ignore_CDATA" : {
+      "description" : "Indicates if CDATA should be ignored when using the XPATH expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "assume_html" : {
+      "description" : "If checked a more tolerant xml parser will be used, which copes with forbidden HTML constructions, but always assumes HTML and adds missing tags. For plain XML uncheck this.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "index_queries" : {
+      "description" : "Specifies a list of attribute names and the regions. Regions are specified as offset index and length of the match.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "jsonpath_queries" : {
+      "description" : "Specifies a list of attribute names and their corresponding JsonPath queries. See the operator documentation for details on JsonPath.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "segment" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "documents" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : true,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:window_document",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.segmenter.DocumentWindowingOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "window_length" : {
+      "description" : "Defines the number of tokens a window covers. The resulting document will contain a token sequence of that length.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "step_size" : {
+      "description" : "Defines the number of tokens between the start of two windows. A step size of one would case each token to become first token of a window.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "extend_last_window" : {
+      "description" : "If checked, the last window will be extended, so that it covers all remaining tokens. Otherwise incomplete windows will be added.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "segment" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "document 1" : {
+        "className" : "com.rapidminer.operator.text.Document",
+        "isCollection" : true,
+        "isSpecific" : true
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "documents 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:combine_documents",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.CombineDocumentsOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:html_to_xml",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.HtmlToXml",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "xslt document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "document" : {
+      "className" : "com.rapidminer.operator.text.Document",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "text:process_xslt",
+  "ioHolderClass" : "com.rapidminer.operator.text.io.transformer.XsltProcessor",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : { },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

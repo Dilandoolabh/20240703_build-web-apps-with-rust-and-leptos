@@ -1,0 +1,6 @@
+{
+  "git": {
+    "sha1": "8e44f838276c9fe37d49d827593fc82fba48333d"
+  },
+  "path_in_vcs": "crates/atomic-file-install"
+}

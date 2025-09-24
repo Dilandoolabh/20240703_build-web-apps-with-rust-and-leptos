@@ -1,0 +1,99 @@
+[ {
+  "inputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "through 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "process_scheduling:schedule_process",
+  "ioHolderClass" : "com.rapidminer.extension.processscheduling.operator.scheduling.ScheduleProcessOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "process_location" : {
+      "description" : "The process that should be scheduled.",
+      "className" : "com.rapidminer.parameter.ParameterTypeProcessLocation",
+      "isOptional" : false
+    },
+    "process_input" : {
+      "description" : "Defines process inputs.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "process_output" : {
+      "description" : "Defines locations for storing process output.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "macros" : {
+      "description" : "Defines macros for the process to schedule.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "forward_macros" : {
+      "description" : "If checked, the macros defined in the current context are forwarded to the process to schedule.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "execution_queue" : {
+      "description" : "The execution queue for the process to schedule",
+      "className" : "com.rapidminer.extension.processscheduling.parameter.ParameterTypeProcessExecutionQueue",
+      "isOptional" : true
+    },
+    "schedule_mode" : {
+      "description" : "Select the schedule mode",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "date" : {
+      "description" : "The date the process should be run.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDate",
+      "isOptional" : true
+    },
+    "offset" : {
+      "description" : "Offset to schedule the process with.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "time_unit" : {
+      "description" : "Time unit the offset should be interpreted as.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "expression" : {
+      "description" : "The cron expression that should be used to schedule the process",
+      "className" : "com.rapidminer.parameter.ParameterTypeCronExpression",
+      "isOptional" : true
+    },
+    "set_start_date" : {
+      "description" : "Set a start date for the cron schedule to start.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "start_date" : {
+      "description" : "Date the cron schedule should start.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDate",
+      "isOptional" : true
+    },
+    "set_end_date" : {
+      "description" : "Set a end date for the cron schedule to end.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "end_date" : {
+      "description" : "Date the cron schedule should end.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDate",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

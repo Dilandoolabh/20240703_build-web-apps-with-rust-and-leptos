@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><repositories>
+  <filesystemRepository>
+    <path>%{DOCUMENTS}\AltairRapidMiner\AI Studio\Repositories\AR_Project</path>
+    <alias>AR_Project</alias>
+    <encryption-context>default-local-context</encryption-context>
+  </filesystemRepository>
+  <filesystemRepository>
+    <path>%{DOCUMENTS}\AltairRapidMiner\AI Studio\Local Repository</path>
+    <alias>Local Repository</alias>
+    <encryption-context>default-local-context</encryption-context>
+  </filesystemRepository>
+  <filesystemRepository>
+    <path>%{DOCUMENTS}\AltairRapidMiner\AI Studio\Repositories\RapidMinerBook</path>
+    <alias>RapidMinerBook</alias>
+    <encryption-context>default-local-context</encryption-context>
+  </filesystemRepository>
+</repositories>

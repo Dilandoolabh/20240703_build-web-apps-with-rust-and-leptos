@@ -1,0 +1,431 @@
+[ {
+  "inputs" : {
+    "input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "preprocessing model" : {
+      "className" : "com.rapidminer.extension.blending.operator.pivot.PivotPreprocessingModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:pivot",
+  "ioHolderClass" : "com.rapidminer.extension.blending.operator.pivot.PivotOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "group_by_attributes" : {
+      "description" : "Attributes that groups the examples which form one row after pivoting.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "column_grouping_attribute" : {
+      "description" : "Attribute that decides the new attributes after the pivot.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "aggregation_attributes" : {
+      "description" : "The attributes which should be aggregated.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "use_default_aggregation" : {
+      "description" : "If checked you can select a default aggregation function for a all attributes that are not used in the other parameters.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "default_aggregation_function" : {
+      "description" : "The type of the used aggregation function for all default attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:sort",
+  "ioHolderClass" : "com.rapidminer.extension.blending.operator.examples.sort.MultiSorting",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "sort_by" : {
+      "description" : "This parameter defines how to sort by specifying the attributes to sort by and the associated sorting orders.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "partition 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "blending:split_data",
+  "ioHolderClass" : "com.rapidminer.extension.blending.examples.sampling.SplitData",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "partitions" : {
+      "description" : "The partitions that should be created.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : false
+    },
+    "sampling_type" : {
+      "description" : "Defines the sampling type of this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "table input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "table output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:generate_columns",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.generation.GenerateColumns",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "function_descriptions" : {
+      "description" : "List of functions to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "keep_all_columns" : {
+      "description" : "If set to true, the original regular columns are kept, otherwise they are removed from the table.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "default_time_zone" : {
+      "description" : "",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:generate_id",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.generation.GenerateID",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "create_nominal_ids" : {
+      "description" : "True if nominal ids (instead of integer ids) should be created",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "offset" : {
+      "description" : "The offset which will be added to each id",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:set_role",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.SetRole",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "set_roles" : {
+      "description" : "This parameter defines new attribute roles.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "dictionary input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:rename",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.rename.Rename",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "rename attributes" : {
+      "description" : "Use this list to define the renaming of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "from_attribute" : {
+      "description" : "Attribute in the dictionary holding the old names.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "to_attribute" : {
+      "description" : "Attribute in the dictionary holding the new names.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:rename_by_example_values",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.rename.RenameByRow",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "row_number" : {
+      "description" : "Indicates which row should be used as attribute names. Counting starts with 1.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:set_positive_value",
+  "ioHolderClass" : "com.rapidminer.extension.blending.attributes.types.SetPositiveValue",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "positive_values" : {
+      "description" : "Please select an attribute name and the corresponding positive value.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributeValue",
+      "isOptional" : false
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set input" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "original" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "blending:select_attributes",
+  "ioHolderClass" : "com.rapidminer.extension.blending.operator.attributes.SelectAttributes",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "type" : {
+      "description" : "This parameter determines if the selected attributes are kept or removed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute_filter_type" : {
+      "description" : "This parameter selects a filter type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "select_attribute" : {
+      "description" : "The attribute which should be selected.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "select_subset" : {
+      "description" : "Click to select the attribute subset.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributeSubset",
+      "isOptional" : false
+    },
+    "expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.columns.RegexColumnFilter$1",
+      "isOptional" : true
+    },
+    "exclude_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.columns.RegexColumnFilter$1",
+      "isOptional" : true
+    },
+    "type_of_value" : {
+      "description" : "Select the attribute types to keep.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCheckBoxGroup",
+      "isOptional" : true
+    },
+    "also_apply_to_special_attributes_(id,_label..)" : {
+      "description" : "Indicates if the operator should also be applied to special attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

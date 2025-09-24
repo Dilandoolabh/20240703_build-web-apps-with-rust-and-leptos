@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<VLDocking version="2.1">
+<DockingDesktop name="default">
+<DockingPanel>
+<TabbedDockable>
+<Dockable>
+<Key dockName="interactive_analysis_1"/>
+</Dockable>
+<Dockable>
+<Key dockName="new_interactive_analysis_tab"/>
+</Dockable>
+</TabbedDockable>
+</DockingPanel>
+<TabGroups>
+</TabGroups>
+</DockingDesktop>
+</VLDocking>

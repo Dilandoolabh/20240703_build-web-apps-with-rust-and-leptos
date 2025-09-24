@@ -1,0 +1,93 @@
+[ {
+  "inputs" : { },
+  "outputs" : {
+    "output" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "utility:create_exampleset",
+  "ioHolderClass" : "com.rapidminer.extension.utility.operator.generator.CreateExampleSet",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "generator_type" : {
+      "description" : "The type of generator to create the ExampleSet.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "number_of_examples" : {
+      "description" : "The number of Examples to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "use_stepsize" : {
+      "description" : "If this parameter is set to true, a 'start value' and a 'stepsize' will be used in the series generation. If tis parameter is set to false a 'start value' and 'stop value' is used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "function_descriptions" : {
+      "description" : "List of functions to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "add_id_attribute" : {
+      "description" : "If this parameter is set to true, an additional (numeric) id attribute is generated, which can be used in the function expressions.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : false
+    },
+    "numeric_series_configuration" : {
+      "description" : "Numeric series list to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "date_series_configuration" : {
+      "description" : "Date series list to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "date_series_configuration (interval)" : {
+      "description" : "Date series list to generate.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "date_format" : {
+      "description" : "Date format used for 'start date' and 'end date' parameters.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDateFormat",
+      "isOptional" : true
+    },
+    "time_zone" : {
+      "description" : "The time zone used for the date objects if not specified in the date string itself.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    },
+    "input_csv_text" : {
+      "description" : "CSV text.",
+      "className" : "com.rapidminer.parameter.ParameterTypeText",
+      "isOptional" : true
+    },
+    "column_separator" : {
+      "description" : "Column separator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "parse_all_as_nominal" : {
+      "description" : "If this parameter is set to true, all attributes are forced to nominal type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "decimal_point_character" : {
+      "description" : "Decimal point character.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "trim_attribute_names" : {
+      "description" : "If this parameter is set to true, attribute names will be trimmed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

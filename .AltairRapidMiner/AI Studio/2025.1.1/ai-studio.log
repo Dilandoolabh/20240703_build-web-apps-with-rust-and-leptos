@@ -1,0 +1,558 @@
+Aug 07, 2025 1:05:25 PM com.rapidminer.tools.net.UserProvidedTLSCertificateLoader logLoaded
+INFO: Loaded 0 certificates from C:\Users\dilan\.AltairRapidMiner\AI Studio\shared\cacerts
+Aug 07, 2025 1:05:30 PM com.rapidminer.gui.RapidMinerGUI run
+INFO: Launching AI Studio 2025.1.1 (Engine: 11.1.1), platform WIN64, with Java Eclipse Adoptium 17.0.12 on Windows 11 (10.0 / amd64)
+Aug 07, 2025 1:05:31 PM com.rapidminer.tools.PlatformUtilities logInfo
+INFO: rapidminer.home is 'C:\Program Files\Altair\RapidMiner\AI Studio 2025.1.1'.
+Aug 07, 2025 1:05:31 PM com.rapidminer.tools.ProxySettings$ProxyVoleLogger log
+WARNING: Windows function WinHttpDetectAutoProxyConfigUrl returned error : {}
+Aug 07, 2025 1:05:33 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Initializing license manager.
+Aug 07, 2025 1:05:33 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Using default license location.
+Aug 07, 2025 1:05:33 PM com.rapidminer.core.license.ProductConstraintManager initialize
+INFO: Registering default product.
+Aug 07, 2025 1:05:33 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Aug 07, 2025 1:05:33 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Aug 07, 2025 1:05:33 PM com.rapidminer.repository.FileRepositoryProvider load
+WARNING: Unknown tag: filesystemRepository
+Aug 07, 2025 1:05:33 PM com.rapidminer.repository.FileRepositoryProvider load
+WARNING: Unknown tag: filesystemRepository
+Aug 07, 2025 1:05:33 PM com.rapidminer.repository.FileRepositoryProvider load
+WARNING: Unknown tag: filesystemRepository
+Aug 07, 2025 1:05:33 PM com.rapidminer.search.GlobalSearchRegistry registerSearchCategory
+INFO: Global Search category repository registered.
+Aug 07, 2025 1:05:33 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Multi Language Pack
+Aug 07, 2025 1:05:33 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Python Extension Loader
+Aug 07, 2025 1:05:33 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Text Processing
+Aug 07, 2025 1:05:33 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Weka
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Cloud Connectivity
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Data Editor
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: H2O
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Model Simulator
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Operator Recommender
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Process Scheduling
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Advanced File Connectors
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Blending
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Browser
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Concurrency
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: CTA
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: HTML5 Charts
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Interactivity
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: JDBC Connectors
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: KS Provider
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Legacy Result Access
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Modeling
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Productivity
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Professional
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Remote Repository
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Utility
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Social Media
+Aug 07, 2025 1:05:34 PM com.rapidminer.tools.plugin.Plugin registerPlugins
+INFO: Register plugin: Time Series
+Aug 07, 2025 1:05:35 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Twitter Connection. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:35 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initPlugin$2
+INFO: Async: Init browser setup.
+Aug 07, 2025 1:05:36 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Amazon S3 Connection. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:36 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Azure Blob Storage Connection. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:36 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator gui.configurable.cloud.azure.gen2.name. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:36 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Google Cloud Storage Connection. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:36 PM com.rapidminer.tools.config.ConfigurationManager register
+WARNING: Registered configurator Dropbox Connection. Please update your extension to use the new connection framework!
+Aug 07, 2025 1:05:36 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties registerDrivers
+INFO: JDBC driver net.sourceforge.jtds.jdbc.Driver not found. Probably the driver is not installed.
+Aug 07, 2025 1:05:36 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for ODBC Bridge (e.g. Access)
+Aug 07, 2025 1:05:36 PM com.rapidminer.extension.jdbc.tools.jdbc.JDBCProperties <init>
+WARNING: Missing database driver class name for Ingres
+Aug 07, 2025 1:05:37 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initPlugin$2
+INFO: Async: Basic browser setup test starting.
+Aug 07, 2025 1:05:39 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initPlugin$2
+INFO: Async: Created basic browser instance.
+Aug 07, 2025 1:05:39 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initPlugin$2
+INFO: Async: Loaded basic browser test content. Executing functionality check.
+Aug 07, 2025 1:05:39 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initPlugin$2
+INFO: Async: Basic browser setup test successful.
+Aug 07, 2025 1:05:39 PM com.altair.ai.pel.PluginInitPythonExtensionLoader initPlugin
+WARNING: Python extensions are only available with Altair Units! Disabling Python Extension Loader.
+Aug 07, 2025 1:05:39 PM com.rapidminer.repository.RepositoryManager registerExtensionSamples
+INFO: Registered 'Time Series' as sample folder.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Utility 11.1.1 was loaded in 8ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Productivity 11.1.1 was loaded in 9ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension CTA 11.1.1 was loaded in 9ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Process Scheduling 10.4.0 was loaded in 9ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Professional 11.1.1 was loaded in 10ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Operator Recommender 10.3.1 was loaded in 13ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Data Editor 10.3.1 was loaded in 16ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Modeling 11.1.1 was loaded in 18ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension KS Provider 11.1.1 was loaded in 18ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Interactivity 11.1.1 was loaded in 20ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Legacy Result Access 11.1.1 was loaded in 22ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Concurrency 11.1.1 was loaded in 32ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Multi Language Pack 11.1.1 was loaded in 37ms.
+Aug 07, 2025 1:05:39 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Blending 11.1.1 was loaded in 38ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Social Media 10.3.1 was loaded in 48ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Weka 7.3.0 was loaded in 58ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Python Extension Loader 10.4.0 was loaded in 62ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Advanced File Connectors 11.1.1 was loaded in 82ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension HTML5 Charts 11.1.1 was loaded in 85ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Browser 11.1.1 was loaded in 94ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Time Series 10.3.1 was loaded in 95ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Remote Repository 11.1.1 was loaded in 133ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Model Simulator 11.1.1 was loaded in 171ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension H2O 11.0.1 was loaded in 178ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Text Processing 11.0.1 was loaded in 370ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension Cloud Connectivity 11.1.1 was loaded in 754ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.plugin.Plugin initAll
+INFO: Extension JDBC Connectors 11.1.1 was loaded in 3464ms.
+Aug 07, 2025 1:05:40 PM com.rapidminer.tools.MailUtilities initializeMailCap
+INFO: Initializing mail cap
+Aug 07, 2025 1:05:40 PM com.rapidminer.search.GlobalSearchRegistry registerSearchCategory
+INFO: Global Search category operator registered.
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Amazon S3 Connection
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Azure Blob Storage Connection
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for gui.configurable.cloud.azure.gen2.name
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Dropbox Connection
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Google Cloud Storage Connection
+Aug 07, 2025 1:05:44 PM com.rapidminer.tools.config.ClientConfigurationManager loadAllParameters
+INFO: No configuration file found for Twitter Connection
+Aug 07, 2025 1:05:45 PM com.rapidminer.search.GlobalSearchRegistry registerSearchCategory
+INFO: Global Search category actions registered.
+Aug 07, 2025 1:05:45 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initGui$5
+INFO: Async: Hardware accelerated browser setup test starting.
+Aug 07, 2025 1:05:46 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initGui$5
+INFO: Async: Created hardware accelerated browser instance.
+Aug 07, 2025 1:05:46 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initGui$5
+INFO: Async: Loaded hardware accelerated browser test content. Executing functionality check.
+Aug 07, 2025 1:05:46 PM com.rapidminer.extension.browser.PluginInitBrowser lambda$initGui$5
+INFO: Async: Hardware accelerated browser setup test successful.
+Aug 07, 2025 1:05:47 PM com.rapidminer.io.process.XMLTools hardenDocumentBuilderFactory
+WARNING: Could not set http://javax.xml.XMLConstants/property/accessExternalStylesheet for XML processor
+Aug 07, 2025 1:05:48 PM com.rapidminer.search.GlobalSearchRegistry registerSearchCategory
+INFO: Global Search category academy registered.
+Aug 07, 2025 1:05:48 PM com.rapidminer.gui.search.GlobalSearchGUIRegistry registerSearchVisualizationProvider
+INFO: Global Search GUI provider added for category academy.
+Aug 07, 2025 1:05:48 PM com.rapidminer.gui.MainFrame finishInitialization
+WARNING: Not adding legacy connections menu even though legacy configurables are present. Check log for offending extensions
+Aug 07, 2025 1:05:49 PM com.rapidminer.gui.search.GlobalSearchGUIRegistry registerSearchVisualizationProvider
+INFO: Global Search GUI provider added for category operator.
+Aug 07, 2025 1:05:49 PM com.rapidminer.gui.search.GlobalSearchGUIRegistry registerSearchVisualizationProvider
+INFO: Global Search GUI provider added for category repository.
+Aug 07, 2025 1:05:49 PM com.rapidminer.gui.search.GlobalSearchGUIRegistry registerSearchVisualizationProvider
+INFO: Global Search GUI provider added for category actions.
+Aug 07, 2025 1:05:49 PM com.rapidminer.search.GlobalSearchRegistry registerSearchCategory
+INFO: Global Search category marketplace registered.
+Aug 07, 2025 1:05:49 PM com.rapidminer.gui.search.GlobalSearchGUIRegistry registerSearchVisualizationProvider
+INFO: Global Search GUI provider added for category marketplace.
+Aug 07, 2025 1:05:49 PM com.rapidminer.deployment.update.client.MarketplaceUpdateManager$1 run
+INFO: Checking for updates.
+Aug 07, 2025 1:05:50 PM com.rapidminer.extension.remote.PluginInitRemoteRepository$2 run
+INFO: Community repository 'Community Samples' added.
+Aug 07, 2025 1:05:50 PM com.rapidminer.extension.remote.PluginInitRemoteRepository$2 run
+INFO: Community repository 'Training Resources' added.
+Aug 07, 2025 1:05:51 PM com.rapidminer.deployment.update.client.MarketplaceUpdateManager$1 run
+INFO: No updates since 8/3/25 3:30 PM.
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 1:13:44 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:13:44 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 1:13:44 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 1:15:08 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:15:08 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:15:08 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 1:15:08 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 1:16:16 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 1:16:16 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Marital_Status: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: marital
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Gender: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: gender
+Aug 07, 2025 1:16:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: Decision Tree: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 1:16:17 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 1:16:17 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:37:53 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:37:53 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:37:53 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:37:53 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:39:53 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:39:53 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:39:53 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:39:53 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:39:53 PM com.rapidminer.extension.html5charts.gui.chart.implementations.html5.HTML5HighChartsChartGUI lambda$createChartSceneJxBrowser$6
+INFO: HTML5 chart browser load error: htmlloader://c0d143c9-efd3-4a1c-94a0-ff8083c8ed1c/ : ABORTED
+Aug 07, 2025 10:40:20 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:40:20 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:40:20 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:40:20 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:41:43 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:41:43 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:41:43 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:41:43 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:44:01 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:44:01 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:44:01 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:44:01 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:44:01 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:45:17 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:45:17 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:45:17 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN: Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:45:17 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:45:17 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:52:23 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:52:23 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:52:23 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.ResultService init
+INFO: No filename given for result file, using stdout for logging results!
+Aug 07, 2025 10:54:33 PM com.rapidminer.Process execute
+INFO: Process starts
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.tools.WrapperLoggingHandler log
+WARNING: k-NN (2): Age: Using this data column may potentially lead to biased models or decisions. Please be careful and check if using this data is problematic.This column was flagged since its name contains a suspicious term: age
+Aug 07, 2025 10:54:33 PM com.rapidminer.Process saveResults
+INFO: Saving results.
+Aug 07, 2025 10:54:33 PM com.rapidminer.Process execute
+INFO: Process finished successfully after 0 s
+Aug 07, 2025 10:58:54 PM com.rapidminer.gui.RapidMinerGUI$ShutdownHook run
+INFO: Running shutdown sequence.
+Aug 07, 2025 10:58:56 PM com.rapidminer.extension.cta.tools.CallToActionScheduler shutdown
+INFO: Shutting down CTA scheduler.

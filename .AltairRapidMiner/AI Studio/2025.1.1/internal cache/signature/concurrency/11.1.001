@@ -1,0 +1,1328 @@
+[ {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.Model",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "test result set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "performance 1" : {
+      "className" : "com.rapidminer.operator.performance.PerformanceVector",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:cross_validation",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.validation.CrossValidationOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "split_on_batch_attribute" : {
+      "description" : "Use the special attribute 'batch' to partition the data instead of randomly splitting the data. This gives you control over the exact examples which are used to train the model each fold.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "leave_one_out" : {
+      "description" : "Set the number of validations to the number of examples. If set to true, number_of_folds is ignored",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "number_of_folds" : {
+      "description" : "Number of folds (aka number of subsets) for the cross validation.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "sampling_type" : {
+      "description" : "Defines the sampling type of the cross validation (linear = consecutive subsets, shuffled = random subsets, stratified = random subsets with class distribution kept constant)",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "one class label", "updatable", "weighted examples", "formula provider", "missing values" ],
+  "subNodes" : [ {
+    "inputs" : {
+      "training set" : {
+        "className" : "com.rapidminer.adaption.belt.IOTable",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "model" : {
+        "className" : "com.rapidminer.operator.Model",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "through 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  }, {
+    "inputs" : {
+      "model" : {
+        "className" : "com.rapidminer.operator.Model",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "test set" : {
+        "className" : "com.rapidminer.adaption.belt.IOTable",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "through 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "test set results" : {
+        "className" : "com.rapidminer.example.ExampleSet",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "performance 1" : {
+        "className" : "com.rapidminer.operator.performance.PerformanceVector",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "index" : 1
+  } ]
+}, {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.tree.TreeModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:parallel_decision_tree",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.learner.tree.ParallelDecisionTreeLearner",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "criterion" : {
+      "description" : "Specifies the used criterion for selecting attributes and numerical splits.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    },
+    "maximal_depth" : {
+      "description" : "The maximum tree depth (-1: no bound)",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "apply_pruning" : {
+      "description" : "Activates the pruning of the tree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "confidence" : {
+      "description" : "The confidence level used for the pessimistic error calculation of pruning.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "apply_prepruning" : {
+      "description" : "Activates the pre pruning and delivers a prepruned tree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "minimal_gain" : {
+      "description" : "The minimal gain which must be achieved in order to produce a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "minimal_leaf_size" : {
+      "description" : "The minimal size of all leaves.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "minimal_size_for_split" : {
+      "description" : "The minimal size of a node in order to allow a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "number_of_prepruning_alternatives" : {
+      "description" : "The number of alternative nodes tried when prepruning would prevent a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "weighted examples", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "training set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "model" : {
+      "className" : "com.rapidminer.operator.learner.tree.ConfigurableRandomForestModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "exampleSet" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:parallel_random_forest",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.learner.tree.ParallelRandomForestLearner",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "number_of_trees" : {
+      "description" : "The number of learned random trees.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "criterion" : {
+      "description" : "Specifies the used criterion for selecting attributes and numerical splits.",
+      "className" : "com.rapidminer.parameter.ParameterTypeStringCategory",
+      "isOptional" : true
+    },
+    "maximal_depth" : {
+      "description" : "The maximum tree depth (-1: no bound)",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "apply_pruning" : {
+      "description" : "Activates the pruning of the tree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "confidence" : {
+      "description" : "The confidence level used for the pessimistic error calculation of pruning.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "apply_prepruning" : {
+      "description" : "Activates the pre pruning and delivers a prepruned tree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "minimal_gain" : {
+      "description" : "The minimal gain which must be achieved in order to produce a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "minimal_leaf_size" : {
+      "description" : "The minimal size of all leaves.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "minimal_size_for_split" : {
+      "description" : "The minimal size of a node in order to allow a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "number_of_prepruning_alternatives" : {
+      "description" : "The number of alternative nodes tried when prepruning would prevent a split.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "random_splits" : {
+      "description" : "Split numerical attributes randomly.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "guess_subset_ratio" : {
+      "description" : "Indicates that log(m) + 1 features are used, otherwise a ratio has to be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "subset_ratio" : {
+      "description" : "Ratio of randomly chosen attributes to test",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "voting_strategy" : {
+      "description" : "Voting strategy used to determine prediction.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "missing values" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "matrix" : {
+      "className" : "com.rapidminer.operator.visualization.dependencies.NumericalMatrix",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "weights" : {
+      "className" : "com.rapidminer.example.AttributeWeights",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:correlation_matrix",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.visualization.dependencies.BeltCorrelationMatrixOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "type" : {
+      "description" : "This parameter determines if the selected attributes are kept or removed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute_filter_type_" : {
+      "description" : "This parameter selects a filter type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "select_attribute" : {
+      "description" : "The attribute which should be selected.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "select_subset" : {
+      "description" : "Click to select the attribute subset.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributeSubset",
+      "isOptional" : false
+    },
+    "expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.columns.RegexColumnFilter$1",
+      "isOptional" : true
+    },
+    "exclude_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.columns.RegexColumnFilter$1",
+      "isOptional" : true
+    },
+    "type_of_value" : {
+      "description" : "Select the attribute types to keep.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCheckBoxGroup",
+      "isOptional" : true
+    },
+    "also_apply_to_special_attributes_(id,_label..)" : {
+      "description" : "Indicates if the operator should also be applied to special attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "attribute_filter_type" : {
+      "description" : "The condition specifies which attributes are selected or affected by this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "attributes" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$1",
+      "isOptional" : true
+    },
+    "use_except_expression" : {
+      "description" : "If enabled, an exception to the specified regular expression might be specified. Attributes of matching this will be filtered out, although matching the first expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$2",
+      "isOptional" : true
+    },
+    "value_type" : {
+      "description" : "The value type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_value_type_exception" : {
+      "description" : "If enabled, an exception to the specified value type might be specified. Attributes of this type will be filtered out, although matching the first specified type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_value_type" : {
+      "description" : "Except this value type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "block_type" : {
+      "description" : "The block type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_block_type_exception" : {
+      "description" : "If enabled, an exception to the specified block type might be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_block_type" : {
+      "description" : "Except this block type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numeric_condition" : {
+      "description" : "Parameter string for the condition, e.g. '>= 5'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "invert_selection" : {
+      "description" : "Indicates if only attributes should be accepted which would normally filtered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_special_attributes" : {
+      "description" : "Indicate if this operator should also be applied on the special attributes. Otherwise they are always kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "normalize_weights" : {
+      "description" : "Indicates if the attributes weights should be normalized.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "squared_correlation" : {
+      "description" : "Indicates if the squared correlation should be calculated.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "cluster model" : {
+      "className" : "com.rapidminer.operator.clustering.CentroidClusterModel",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "clustered set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:k_means",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.clustering.clusterer.BeltKMeans",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "add_cluster_attribute" : {
+      "description" : "If enabled, a cluster id is generated as new special attribute directly in this operator, otherwise this operator does not add an id attribute. In the latter case you have to use the Apply Model operator to generate the cluster attribute.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "add_as_label" : {
+      "description" : "If true, the cluster id is stored in an attribute with the special role 'label' instead of 'cluster'.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "remove_unlabeled" : {
+      "description" : "Delete the unlabeled examples.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "k" : {
+      "description" : "The number of clusters which should be detected.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "max_runs" : {
+      "description" : "The maximal number of runs of k-Means with random initialization that are performed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "determine_good_start_values" : {
+      "description" : "Determine the first k centroids using the K-Means++ heuristic described in \"k-means++: The Advantages of Careful Seeding\" by David Arthur and Sergei Vassilvitskii 2007",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "measure_types" : {
+      "description" : "The measure type",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "mixed_measure" : {
+      "description" : "Select measure",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "nominal_measure" : {
+      "description" : "Select measure",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numerical_measure" : {
+      "description" : "Select measure",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "divergence" : {
+      "description" : "Select divergence",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "kernel_type" : {
+      "description" : "The kernel type",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "kernel_gamma" : {
+      "description" : "The kernel parameter gamma.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_sigma1" : {
+      "description" : "The kernel parameter sigma1.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_sigma2" : {
+      "description" : "The kernel parameter sigma2.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_sigma3" : {
+      "description" : "The kernel parameter sigma3.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_degree" : {
+      "description" : "The kernel parameter degree.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_shift" : {
+      "description" : "The kernel parameter shift.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_a" : {
+      "description" : "The kernel parameter a.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "kernel_b" : {
+      "description" : "The kernel parameter b.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "max_optimization_steps" : {
+      "description" : "The maximal number of iterations performed for one run of k-Means.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "use_local_random_seed" : {
+      "description" : "Indicates if a local random seed should be used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "local_random_seed" : {
+      "description" : "Specifies the local random seed",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ "polynominal attributes", "binominal attributes", "numerical attributes", "polynominal label", "binominal label", "numerical label", "one class label", "unlabeled" ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "example set" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "frequent sets" : {
+      "className" : "com.rapidminer.operator.learner.associations.FrequentItemSets",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:fp_growth",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.learner.associations.fpgrowth.BeltFPGrowth",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "input_format" : {
+      "description" : "Specifies the input format of the data.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "item_separators" : {
+      "description" : "Item separator (regular expression)",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "use_quotes" : {
+      "description" : "Indicates if quotes should be regarded.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "quotes_character" : {
+      "description" : "The quotes character.",
+      "className" : "com.rapidminer.parameter.ParameterTypeChar",
+      "isOptional" : true
+    },
+    "escape_character" : {
+      "description" : "The character that is used to escape quotes and item seperators",
+      "className" : "com.rapidminer.parameter.ParameterTypeChar",
+      "isOptional" : true
+    },
+    "trim_item_names" : {
+      "description" : "Indicates if item names should be trimmed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "positive_value" : {
+      "description" : "This parameter determines, which value of the binominal attributes is treated as positive. Attributes with that value are considered as part of a transaction. If left blank, the example set determines, which is value is used.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "min_requirement" : {
+      "description" : "Specifies the minimum support requirement.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "min_support" : {
+      "description" : "The minimum support is defined as a percentage to consider an itemset to be frequent.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : false
+    },
+    "min_frequency" : {
+      "description" : "The minimum support is defined as a number of occurrences to consider an itemset to be frequent.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "min_items_per_itemset" : {
+      "description" : "The lower bound for the size of the itemsets.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "max_items_per_itemset" : {
+      "description" : "The upper bound for the size of the itemsets (0: no upper bound)",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "max_number_of_itemsets" : {
+      "description" : "The upper bound for the number of itemsets (0: no upper bound)",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "find_min_number_of_itemsets" : {
+      "description" : "Indicates if the minimal support should be decreased automatically until the specified minimum number of frequent itemsets are found.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "min_number_of_itemsets" : {
+      "description" : "Indicates the minimum number of itemsets to find.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : false
+    },
+    "max_number_of_retries" : {
+      "description" : "This determines how many times the operator lowers the minimum support to find the minimal number of itemsets.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : true
+    },
+    "requirement_decrease_factor" : {
+      "description" : "The factor by the minimum requirement decreases in each iteration.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDouble",
+      "isOptional" : true
+    },
+    "must_contain_list" : {
+      "description" : "The items that all itemset should contain.",
+      "className" : "com.rapidminer.parameter.ParameterTypeEnumeration",
+      "isOptional" : true
+    },
+    "must_contain_regexp" : {
+      "description" : "The items that all itemset should contain (regular expression, empty means none).",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "performance" : {
+      "className" : "com.rapidminer.operator.performance.PerformanceVector",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "model" : {
+      "className" : "com.rapidminer.operator.Model",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "parameter set" : {
+      "className" : "com.rapidminer.operator.meta.ParameterSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:optimize_parameters_grid",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.optimization.parameters.OptimizeGridOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "configure_operator" : {
+      "description" : "Configure this operator by means of a Wizard.",
+      "className" : "com.rapidminer.parameter.ParameterTypeConfiguration",
+      "isOptional" : true
+    },
+    "parameters" : {
+      "description" : "The parameters.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "error_handling" : {
+      "description" : "This selects the method for handling errors occurring during the execution of the inner process.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "log_performance" : {
+      "description" : "Log performance for iteration if performance port is connected.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "log_all_criteria" : {
+      "description" : "Log all performance criteria or just the main criterion.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "synchronize" : {
+      "description" : "Synchronize parameter iteration",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "input 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "performance" : {
+        "className" : "com.rapidminer.operator.performance.PerformanceVector",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "model" : {
+        "className" : "com.rapidminer.operator.Model",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:loop",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.process_control.loops.LoopOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "number_of_iterations" : {
+      "description" : "The number of times the inner process will be executed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeInt",
+      "isOptional" : false
+    },
+    "iteration_macro" : {
+      "description" : "Name of a macro that will contain the current iteration value. Can be left blank if no macro is needed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "reuse_results" : {
+      "description" : "Set whether to reuse the results of each iteration as the input of the next iteration. If set to true, the output of each iteration is used as input for the next iteration. Enabling this parameter will force the operator to NOT run in a parallel fashion. If set to false, the input of each iteration will be the original input.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "input 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:loop_attributes",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.process_control.loops.LoopAttributesOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute_filter_type" : {
+      "description" : "The condition specifies which attributes are selected or affected by this operator.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "attribute" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : true
+    },
+    "attributes" : {
+      "description" : "The attribute which should be chosen.",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttributes",
+      "isOptional" : true
+    },
+    "regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be kept.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$1",
+      "isOptional" : true
+    },
+    "use_except_expression" : {
+      "description" : "If enabled, an exception to the specified regular expression might be specified. Attributes of matching this will be filtered out, although matching the first expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_regular_expression" : {
+      "description" : "A regular expression for the names of the attributes which should be filtered out although matching the above regular expression.",
+      "className" : "com.rapidminer.operator.preprocessing.filter.attributes.RegexpAttributeFilter$2",
+      "isOptional" : true
+    },
+    "value_type" : {
+      "description" : "The value type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_value_type_exception" : {
+      "description" : "If enabled, an exception to the specified value type might be specified. Attributes of this type will be filtered out, although matching the first specified type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_value_type" : {
+      "description" : "Except this value type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "block_type" : {
+      "description" : "The block type of the attributes.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_block_type_exception" : {
+      "description" : "If enabled, an exception to the specified block type might be specified.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "except_block_type" : {
+      "description" : "Except this block type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "numeric_condition" : {
+      "description" : "Parameter string for the condition, e.g. '>= 5'",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "invert_selection" : {
+      "description" : "Indicates if only attributes should be accepted which would normally filtered.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "include_special_attributes" : {
+      "description" : "Indicate if this operator should also be applied on the special attributes. Otherwise they are always kept.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "attribute_name_macro" : {
+      "description" : "Name of a macro that will contain the current attribute name. Can be left blank if no macro is needed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "reuse_results" : {
+      "description" : "Set whether to reuse the results of each iteration as the input of the next iteration. If set to true, the output of each iteration is used as input for the next iteration. Enabling this parameter will force the operator to NOT run in a parallel fashion. If set to false, the input of each iteration will be the original input.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "input 1" : {
+        "className" : "com.rapidminer.adaption.belt.IOTable",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.example.ExampleSet",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:loop_values",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.process_control.loops.LoopValuesOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "attribute" : {
+      "description" : "The nominal attribute for which the iteration should be defined",
+      "className" : "com.rapidminer.parameter.ParameterTypeAttribute",
+      "isOptional" : false
+    },
+    "iteration_macro" : {
+      "description" : "Name of a macro that will contain the current iteration value. Can be left blank if no macro is needed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "reuse_results" : {
+      "description" : "Set whether to reuse the results of each iteration as the input of the next iteration. If set to true, the output of each iteration is used as input for the next iteration. Enabling this parameter will force the operator to NOT run in a parallel fashion. If set to false, the input of each iteration will be the original input.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "input 1" : {
+        "className" : "com.rapidminer.adaption.belt.IOTable",
+        "isCollection" : false,
+        "isSpecific" : true
+      }
+    },
+    "outputs" : {
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:loop_parameters",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.process_control.loops.LoopParametersOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "configure_operator" : {
+      "description" : "Configure this operator by means of a Wizard.",
+      "className" : "com.rapidminer.parameter.ParameterTypeConfiguration",
+      "isOptional" : true
+    },
+    "parameters" : {
+      "description" : "The parameters.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : true
+    },
+    "error_handling" : {
+      "description" : "This selects the method for handling errors occurring during the execution of the inner process.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "log_performance" : {
+      "description" : "Log performance for iteration if performance port is connected.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "log_all_criteria" : {
+      "description" : "Log all performance criteria or just the main criterion.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "synchronize" : {
+      "description" : "Synchronize parameter iteration",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "input 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "performance" : {
+        "className" : "com.rapidminer.operator.performance.PerformanceVector",
+        "isCollection" : false,
+        "isSpecific" : true
+      },
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "input 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "outputs" : {
+    "output 1" : {
+      "className" : "com.rapidminer.operator.IOObject",
+      "isCollection" : false,
+      "isSpecific" : false
+    }
+  },
+  "ioHolderKey" : "concurrency:loop_files",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.process_control.loops.LoopFilesOperator",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "directory" : {
+      "description" : "Select the directory from where to start scanning for files.",
+      "className" : "com.rapidminer.parameter.ParameterTypeDirectory",
+      "isOptional" : false
+    },
+    "filter_type" : {
+      "description" : "Specifies how to filter file names. You can either use standard, command shell like glob filtering or a regular expression.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "filter_by_glob" : {
+      "description" : "Specifies a glob expression which is used as filter for the file and directory names. It is more simple than regular expressions. A detailed explanation can be found in the help, but it is as used from operating systems. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "filter_by_regex" : {
+      "description" : "Specifies a regular expression which is used as filter for the file and directory names, e.g. 'a.*b' for all files starting with 'a' and ending with 'b'. Ignored if empty.",
+      "className" : "com.rapidminer.parameter.ParameterTypeRegexp",
+      "isOptional" : true
+    },
+    "recursive" : {
+      "description" : "Set whether to recursively search every directory. If set to true, the operator will include files inside sub-directories (and sub-sub-directories ...) of the selected directory.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "skip_inaccessible" : {
+      "description" : "Set whether to ignore files/directories which cannot be accessed. If set to true, the operator will continue running, even if a file/directory cannot be accessed - it will simply be ignored and logged. By default, any inaccessible file/directory will cause the operator to abort.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_macros" : {
+      "description" : "If this parameter is enabled, you can name and extract three macros (for file name, file type and file folder)and use them in your subprocess.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "macro_for_file_name" : {
+      "description" : "If filled, a macro with this name will be set to the name of the current entry. To get access on the full path including the containing directory, combine this with the folder macro. Can be left blank.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "macro_for_file_type" : {
+      "description" : "Will be set to the file's extension. Can be left blank.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "macro_for_folder_name" : {
+      "description" : "If filled, a macro with this name will be set to the containing folder of the current file. To get access on the full path you can combine this with the name macro. Can be left blank.",
+      "className" : "com.rapidminer.parameter.ParameterTypeString",
+      "isOptional" : true
+    },
+    "reuse_results" : {
+      "description" : "Set whether to reuse the results of each iteration as the input of the next iteration. If set to true, the output of each iteration is used as input for the next iteration. Enabling this parameter will force the operator to NOT run in a parallel fashion. If set to false, the input of each iteration will be the original input.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "enable_parallel_execution" : {
+      "description" : "This parameter enables the parallel execution of this operator. Please disable the parallel execution if you run into memory problems.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ {
+    "inputs" : {
+      "file object" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      },
+      "input 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "outputs" : {
+      "output 1" : {
+        "className" : "com.rapidminer.operator.IOObject",
+        "isCollection" : false,
+        "isSpecific" : false
+      }
+    },
+    "index" : 0
+  } ]
+}, {
+  "inputs" : {
+    "left" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    },
+    "right" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "outputs" : {
+    "join" : {
+      "className" : "com.rapidminer.adaption.belt.IOTable",
+      "isCollection" : false,
+      "isSpecific" : true
+    }
+  },
+  "ioHolderKey" : "concurrency:join",
+  "ioHolderClass" : "com.rapidminer.extension.concurrency.operator.preprocessing.join.BeltTableJoin",
+  "hasCaps" : false,
+  "hasI18NCaps" : false,
+  "parameters" : {
+    "remove_double_attributes" : {
+      "description" : "Indicates if double attributes should be removed or renamed",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "join_type" : {
+      "description" : "Specifies which join should be executed.",
+      "className" : "com.rapidminer.parameter.ParameterTypeCategory",
+      "isOptional" : true
+    },
+    "use_id_attribute_as_key" : {
+      "description" : "Indicates if the id attribute is used for join.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    },
+    "key_attributes" : {
+      "description" : "The attributes which shall be used for join. Attributes which shall be matched must be of the same type.",
+      "className" : "com.rapidminer.parameter.ParameterTypeList",
+      "isOptional" : false
+    },
+    "keep_both_join_attributes" : {
+      "description" : "If checked, both columns of a join pair will be kept. Usually this is unneccessary since both attributes are identical.",
+      "className" : "com.rapidminer.parameter.ParameterTypeBoolean",
+      "isOptional" : true
+    }
+  },
+  "capabilities" : [ ],
+  "subNodes" : [ ]
+} ]

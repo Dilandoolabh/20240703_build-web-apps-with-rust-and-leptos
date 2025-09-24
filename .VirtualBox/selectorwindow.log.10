@@ -1,0 +1,22 @@
+00:00:00.671452 VirtualBox GUI VM Selector Window 7.1.6 r167084 win.amd64 (Jan 21 2025 14:13:52) release log
+00:00:00.671453 Log opened 2025-04-09T20:10:47.418615300Z
+00:00:00.671454 Build Type: release
+00:00:00.671457 OS Product: Windows 11
+00:00:00.671457 OS Release: 10.0.26100
+00:00:00.671457 OS Service Pack: 
+00:00:00.682439 DMI Product Name: Zenbook UM3402YAR_UM3402YA
+00:00:00.685901 DMI Product Version: 1.0
+00:00:00.685905 Firmware type: UEFI
+00:00:00.686309 Secure Boot: Enabled
+00:00:00.686316 Host RAM: 15771MB (15.4GB) total, 9989MB (9.7GB) available
+00:00:00.686321 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBox.exe
+00:00:00.686321 Process ID: 10988
+00:00:00.686322 Package type: WINDOWS_64BITS_GENERIC
+00:00:00.686322 Windows Features:
+00:00:00.686322   Core Isolation (Memory Integrity): ENABLED
+00:00:00.686470 Qt version: 6.5.3
+00:00:00.686987 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.706933 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:01.256988 GUI: UIMediumEnumerator: Medium-enumeration finished!
+11:46:53.495280 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenWorkAreaResized: Screen 0 work area is formally resized to: 0x0 x 1440x828
+11:46:53.495442 Log rotated - Log started 2025-04-09T20:10:47.418615300Z
